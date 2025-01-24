@@ -1,10 +1,10 @@
 ## How to run Laravel
 
 Install require
-```composer install```
+`composer install`
 
 Install npm
-```npm install```
+`npm install`
 
 Run Laravel
-```composer run dev```
+`composer run dev`
