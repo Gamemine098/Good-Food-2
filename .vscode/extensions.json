@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "devsense.composer-php-vscode",
+        "naumovs.color-highlight",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "shufo.vscode-blade-formatter",
+        "codingyu.laravel-goto-view",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "austenc.laravel-blade-spacer",
+        "onecentlin.laravel-blade",
+        "ryannaddy.laravel-artisan",
+        "devsense.phptools-vscode",
+        "devsense.profiler-php-vscode",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+    ]
+}
