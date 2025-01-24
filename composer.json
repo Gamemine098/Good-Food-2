@@ -54,7 +54,7 @@
         "dev": "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'",
         "test": [
             "Composer\\Config::disableProcessTimeout",
-            "phpunit"
+            "pest"
         ]
     },
     "extra": {
@@ -69,7 +69,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
-        }
+        },
+        "process-timeout": 0
     },
     "minimum-stability": "stable",
     "prefer-stable": true
