@@ -13,5 +13,6 @@ npm run build
 
 Run Laravel
 ```
-composer run dev
+php artisan serve
+npm run dev
 ```
