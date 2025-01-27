@@ -14,5 +14,7 @@ npm run build
 Run Laravel
 ```
 php artisan serve
+```
+```
 npm run dev
 ```
