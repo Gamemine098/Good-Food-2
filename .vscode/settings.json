@@ -1,6 +1,6 @@
 {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "shufo.vscode-blade-formatter",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.associations": {
         "*.css": "tailwindcss"
     },
@@ -10,7 +10,7 @@
     "tailwindCSS.includeLanguages": {
         "blade": "html"
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
     }
 }
