@@ -1,8 +1,9 @@
 ## Program you need
--XAMPP
--Composer
--NodeJS
--Git
+
+- XAMPP
+- Composer
+- NodeJS
+- Git
 
 ## How to install
 
