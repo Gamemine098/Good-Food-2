@@ -24,8 +24,8 @@ defineProps<{
                 >
                     <nav>
                         <Link
-                            :href="route('welcome')"
-                            class="rounded-md px-3 py-2 hover:text-red-500"
+                            :href="route('Welcome')"
+                            class="rounded-md px-3 py-2 text-xl hover:text-red-500"
                         >
                             Good Food
                         </Link>
@@ -50,7 +50,7 @@ defineProps<{
                         Dashboard
                     </Link>
 
-                    <template v-else>
+                    <div v-else>
                         <Link
                             :href="route('login')"
                             class="rounded-md px-3 py-2 hover:text-red-500"
@@ -65,7 +65,7 @@ defineProps<{
                         >
                             Register
                         </Link>
-                    </template>
+                    </div>
                 </footer>
             </div>
         </div>
