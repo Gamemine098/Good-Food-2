@@ -31,6 +31,6 @@ Route::get('/menu', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-})->name('menu');
+});
 
 require __DIR__ . '/auth.php';

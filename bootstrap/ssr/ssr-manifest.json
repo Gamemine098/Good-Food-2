@@ -6,26 +6,20 @@
   "resources/js/Components/ApplicationLogo.vue": [
     "/build/assets/ApplicationLogo-B2173abF.js"
   ],
-  "resources/js/Components/Checkbox.vue": [
-    "/build/assets/Login-BPSpnpN0.js"
-  ],
-  "resources/js/Components/Checkbox.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Login-BPSpnpN0.js"
-  ],
   "resources/js/Components/DangerButton.vue": [
     "/build/assets/DeleteUserForm-25ywO71A.js"
   ],
   "resources/js/Components/Dropdown.vue": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/Dropdown.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/DropdownLink.vue": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/DropdownLink.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/InputError.vue": [
     "/build/assets/TextInput-CHlFa_Ka.js"
@@ -46,19 +40,19 @@
     "/build/assets/DeleteUserForm-25ywO71A.js"
   ],
   "resources/js/Components/NavLink.vue": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/NavLink.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/PrimaryButton.vue": [
     "/build/assets/PrimaryButton-Cygj-hvK.js"
   ],
   "resources/js/Components/ResponsiveNavLink.vue": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/ResponsiveNavLink.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Components/SecondaryButton.vue": [
     "/build/assets/DeleteUserForm-25ywO71A.js"
@@ -73,10 +67,10 @@
     "/build/assets/TextInput-CHlFa_Ka.js"
   ],
   "resources/js/Layouts/AuthenticatedLayout.vue": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Layouts/AuthenticatedLayout.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/AuthenticatedLayout-D2yPl9ig.js"
+    "/build/assets/AuthenticatedLayout-D4-hx3ZP.js"
   ],
   "resources/js/Layouts/GuestLayout.vue": [
     "/build/assets/GuestLayout-BgzqkeE7.js"
@@ -97,10 +91,10 @@
     "/build/assets/ForgotPassword-DQ92fImu.js"
   ],
   "resources/js/Pages/Auth/Login.vue": [
-    "/build/assets/Login-BPSpnpN0.js"
+    "/build/assets/Login-V-yxTQe-.js"
   ],
   "resources/js/Pages/Auth/Login.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Login-BPSpnpN0.js"
+    "/build/assets/Login-V-yxTQe-.js"
   ],
   "resources/js/Pages/Auth/Register.vue": [
     "/build/assets/Register-Cs0zDhfU.js"
@@ -121,16 +115,22 @@
     "/build/assets/VerifyEmail-CSWiArVO.js"
   ],
   "resources/js/Pages/Dashboard.vue": [
-    "/build/assets/Dashboard-Ccnfz9FU.js"
+    "/build/assets/Dashboard-BLxzeHA3.js"
   ],
   "resources/js/Pages/Dashboard.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Dashboard-Ccnfz9FU.js"
+    "/build/assets/Dashboard-BLxzeHA3.js"
+  ],
+  "resources/js/Pages/Menu.vue": [
+    "/build/assets/Menu-BiFu_ewP.js"
+  ],
+  "resources/js/Pages/Menu.vue?vue&type=script&setup=true&lang.ts": [
+    "/build/assets/Menu-BiFu_ewP.js"
   ],
   "resources/js/Pages/Profile/Edit.vue": [
-    "/build/assets/Edit-D2_BmuGz.js"
+    "/build/assets/Edit-C7fN-Yps.js"
   ],
   "resources/js/Pages/Profile/Edit.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Edit-D2_BmuGz.js"
+    "/build/assets/Edit-C7fN-Yps.js"
   ],
   "resources/js/Pages/Profile/Partials/DeleteUserForm.vue": [
     "/build/assets/DeleteUserForm-25ywO71A.js"
@@ -151,10 +151,10 @@
     "/build/assets/UpdateProfileInformationForm-Bb9dJNas.js"
   ],
   "resources/js/Pages/Welcome.vue": [
-    "/build/assets/Welcome-KkubvAHW.js"
+    "/build/assets/Welcome-BOt7UlzP.js"
   ],
   "resources/js/Pages/Welcome.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Welcome-KkubvAHW.js"
+    "/build/assets/Welcome-BOt7UlzP.js"
   ],
   "resources/js/ssr.ts": [],
   "vendor/tightenco/ziggy/dist/index.js": []

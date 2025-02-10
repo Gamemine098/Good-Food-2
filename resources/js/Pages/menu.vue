@@ -7,13 +7,6 @@ defineProps<{
     laravelVersion: string;
     phpVersion: string;
 }>();
-
-// function handleImageError() {
-//     document.getElementById('screenshot-container')?.classList.add('!hidden');
-//     document.getElementById('docs-card')?.classList.add('!row-span-1');
-//     document.getElementById('docs-card-content')?.classList.add('!flex-row');
-//     document.getElementById('background')?.classList.add('!hidden');
-// }
 </script>
 
 <template>
@@ -29,10 +22,20 @@ defineProps<{
                 <header
                     class="grid grid-cols-2 items-center gap-2 px-48 py-10 lg:grid-cols-3"
                 >
-                    <nav>Good Food</nav>
+                    <nav>
+                        <Link
+                            :href="route('welcome')"
+                            class="rounded-md px-3 py-2 hover:text-red-500"
+                        >
+                            Good Food
+                        </Link>
+                    </nav>
                 </header>
 
-                <main class="mt-6"></main>
+                <main class="mt-6">
+                    <p class="text-center">Welcome to the Menu Page</p>
+                    <p class="text-center">Explore our delicious offerings!</p>
+                </main>
 
                 <footer
                     v-if="canLogin"

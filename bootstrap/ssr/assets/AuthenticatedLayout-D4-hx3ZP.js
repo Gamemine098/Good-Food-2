@@ -231,20 +231,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         content: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(ssrRenderComponent(_sfc_main$3, {
-              href: _ctx.route("profile.edit")
-            }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(` Profile `);
-                } else {
-                  return [
-                    createTextVNode(" Profile ")
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-            _push2(ssrRenderComponent(_sfc_main$3, {
               href: _ctx.route("logout"),
               method: "post",
               as: "button"
@@ -262,14 +248,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             }, _parent2, _scopeId));
           } else {
             return [
-              createVNode(_sfc_main$3, {
-                href: _ctx.route("profile.edit")
-              }, {
-                default: withCtx(() => [
-                  createTextVNode(" Profile ")
-                ]),
-                _: 1
-              }, 8, ["href"]),
               createVNode(_sfc_main$3, {
                 href: _ctx.route("logout"),
                 method: "post",
@@ -311,20 +289,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         _: 1
       }, _parent));
       _push(`</div><div class="border-t border-gray-200 pb-1 pt-4 dark:border-gray-600"><div class="px-4"><div class="text-base font-medium text-gray-800 dark:text-gray-200">${ssrInterpolate(_ctx.$page.props.auth.user.name)}</div><div class="text-sm font-medium text-gray-500">${ssrInterpolate(_ctx.$page.props.auth.user.email)}</div></div><div class="mt-3 space-y-1">`);
-      _push(ssrRenderComponent(_sfc_main$1, {
-        href: _ctx.route("profile.edit")
-      }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(` Profile `);
-          } else {
-            return [
-              createTextVNode(" Profile ")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
       _push(ssrRenderComponent(_sfc_main$1, {
         href: _ctx.route("logout"),
         method: "post",
