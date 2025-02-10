@@ -4,8 +4,6 @@ import { Head, Link } from '@inertiajs/vue3';
 defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
-    laravelVersion: string;
-    phpVersion: string;
 }>();
 </script>
 
@@ -38,9 +36,21 @@ defineProps<{
 
                 <footer
                     v-if="canLogin"
-                    class="bg-slate-300 px-1 py-16 text-center text-sm"
+                    class="bg-gray-600 px-1 py-16 text-center text-sm text-white"
                 >
-                    Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+                    <div>
+                        <h1>สาขาวิชาเทคโนโลยีสารสนเทศ</h1>
+                        <p>
+                            ผลิตและพัฒนากำลังคนสายอาชีพด้านเทคโนโลยีสารสนเทศ
+                            ให้เป็นกำลังคนที่มีคุณภาพและสมรรถนะสูง
+                            เพื่อเป็นกำลังหลักสำคัญในการเพิ่มขีดความสามารถในการแข่งขันของประเทศ.
+                        </p>
+                    </div>
+                    <br />
+                    <div>
+                        Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
+                        วิทยาลัยเทคนิคเชียงใหม่ | All Rights Reserved
+                    </div>
                     <Link
                         v-if="$page.props.auth.user"
                         :href="route('dashboard')"
@@ -49,7 +59,7 @@ defineProps<{
                         Dashboard
                     </Link>
 
-                    <template v-else>
+                    <div v-else>
                         <Link
                             :href="route('login')"
                             class="rounded-md px-3 py-2 hover:text-red-500"
@@ -64,7 +74,7 @@ defineProps<{
                         >
                             Register
                         </Link>
-                    </template>
+                    </div>
                 </footer>
             </div>
         </div>

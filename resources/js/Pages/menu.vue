@@ -4,8 +4,6 @@ import { Head, Link } from '@inertiajs/vue3';
 defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
-    laravelVersion: string;
-    phpVersion: string;
 }>();
 </script>
 
@@ -41,7 +39,6 @@ defineProps<{
                     v-if="canLogin"
                     class="bg-slate-300 px-1 py-16 text-center text-sm"
                 >
-                    Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
                     <Link
                         v-if="$page.props.auth.user"
                         :href="route('dashboard')"
