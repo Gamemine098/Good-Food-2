@@ -46,7 +46,7 @@ defineProps<{
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >About</Link
                         >
-                        <h1 class="text-xl">Contact</h1>
+                        <h1 class="text-xl underline">Contact</h1>
                     </nav>
                 </header>
 

@@ -31,7 +31,7 @@ defineProps<{
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >Menu</Link
                         >
-                        <h1 class="text-xl">Hot Menu</h1>
+                        <h1 class="text-xl underline">Hot Menu</h1>
                         <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"

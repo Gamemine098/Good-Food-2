@@ -41,7 +41,7 @@ defineProps<{
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >Forms</Link
                         >
-                        <h1 class="text-xl">About</h1>
+                        <h1 class="text-xl underline">About</h1>
                         <Link
                             :href="route('Contact')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
