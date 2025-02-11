@@ -17,6 +17,7 @@ defineProps<{
         />
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
+                <!-- Navbar -->
                 <header class="py-8 text-center">
                     <nav class="flex gap-4 px-48">
                         <Link
@@ -49,11 +50,13 @@ defineProps<{
                     </nav>
                 </header>
 
+                <!-- Main Content -->
                 <main class="mt-6">
                     <p class="text-center">Welcome to the Menu Page</p>
                     <p class="text-center">Explore our delicious offerings!</p>
                 </main>
 
+                <!-- Footer -->
                 <footer
                     v-if="canLogin"
                     class="bg-slate-300 px-1 py-16 text-center text-sm"
