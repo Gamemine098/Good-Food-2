@@ -29,4 +29,32 @@ Route::get('/Menu', function () {
     ]);
 })->name('Menu');
 
+Route::get('/Hot_Menu', function () {
+    return Inertia::render('Hot_Menu', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('Hot_Menu');
+
+Route::get('/Forms', function () {
+    return Inertia::render('Forms', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('Forms');
+
+Route::get('/About', function () {
+    return Inertia::render('About', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('About');
+
+Route::get('/Contact', function () {
+    return Inertia::render('Contact', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('Contact');
+
 require __DIR__ . '/auth.php';

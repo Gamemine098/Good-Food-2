@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-    <Head title="Menu" />
+    <Head title="Hot Menu" />
     <div>
         <img
             id="background"
@@ -17,6 +17,7 @@ defineProps<{
         />
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
+                <!-- Navbar -->
                 <header class="py-8 text-center">
                     <nav class="flex gap-4 px-48">
                         <Link
@@ -25,12 +26,12 @@ defineProps<{
                         >
                             <h1 class="text-xl font-bold">Good Food</h1></Link
                         >
-                        <h1 class="text-xl">Menu</h1>
                         <Link
-                            :href="route('Hot_Menu')"
+                            :href="route('Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Hot Menu</Link
+                            >Menu</Link
                         >
+                        <h1 class="text-xl">Hot Menu</h1>
                         <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
@@ -49,15 +50,29 @@ defineProps<{
                     </nav>
                 </header>
 
-                <main class="mt-6">
-                    <p class="text-center">Welcome to the Menu Page</p>
-                    <p class="text-center">Explore our delicious offerings!</p>
+                <!-- Main Content -->
+                <main class="my-2">
+                    <h1>Hello World!</h1>
                 </main>
 
+                <!-- Footer -->
                 <footer
                     v-if="canLogin"
-                    class="bg-slate-300 px-1 py-16 text-center text-sm"
+                    class="bg-gray-600 px-1 py-16 text-center text-sm text-white"
                 >
+                    <div>
+                        <h1>สาขาวิชาเทคโนโลยีสารสนเทศ</h1>
+                        <p>
+                            ผลิตและพัฒนากำลังคนสายอาชีพด้านเทคโนโลยีสารสนเทศ
+                            ให้เป็นกำลังคนที่มีคุณภาพและสมรรถนะสูง
+                            เพื่อเป็นกำลังหลักสำคัญในการเพิ่มขีดความสามารถในการแข่งขันของประเทศ.
+                        </p>
+                    </div>
+                    <br />
+                    <div>
+                        Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
+                        วิทยาลัยเทคนิคเชียงใหม่ | All Rights Reserved
+                    </div>
                     <Link
                         v-if="$page.props.auth.user"
                         :href="route('dashboard')"

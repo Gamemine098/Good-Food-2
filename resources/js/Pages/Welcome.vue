@@ -19,9 +19,33 @@ defineProps<{
             <div class="relative w-full">
                 <!-- Navbar -->
                 <header class="py-8 text-center">
-                    <nav class="flex justify-center gap-2">
+                    <nav class="flex gap-4 px-48">
                         <h1 class="text-xl font-bold">Good Food</h1>
-                        <Link :href="route('Menu')" class="text-xl">Menu</Link>
+                        <Link
+                            :href="route('Menu')"
+                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                            >Menu</Link
+                        >
+                        <Link
+                            :href="route('Hot_Menu')"
+                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                            >Hot Menu</Link
+                        >
+                        <Link
+                            :href="route('Forms')"
+                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                            >Forms</Link
+                        >
+                        <Link
+                            :href="route('About')"
+                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                            >About</Link
+                        >
+                        <Link
+                            :href="route('Contact')"
+                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                            >Contact</Link
+                        >
                     </nav>
                 </header>
 
