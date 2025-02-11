@@ -17,23 +17,20 @@ defineProps<{
         />
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
-                <header
-                    class="grid grid-cols-2 items-center gap-2 px-48 py-10 lg:grid-cols-3"
-                >
-                    <nav>
-                        <h1 class="text-xl">Good Food</h1>
+                <!-- Navbar -->
+                <header class="py-8 text-center">
+                    <nav class="flex justify-center gap-2">
+                        <h1 class="text-xl font-bold">Good Food</h1>
+                        <Link :href="route('Menu')" class="text-xl">Menu</Link>
                     </nav>
                 </header>
 
-                <main class="mt-6">
-                    <Link
-                        :href="route('Menu')"
-                        class="rounded-md px-3 py-2 hover:text-red-500"
-                    >
-                        Menu
-                    </Link>
+                <!-- Main Content -->
+                <main class="my-2">
+                    <h1>Hello World!</h1>
                 </main>
 
+                <!-- Footer -->
                 <footer
                     v-if="canLogin"
                     class="bg-gray-600 px-1 py-16 text-center text-sm text-white"
