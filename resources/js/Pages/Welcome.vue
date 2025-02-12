@@ -21,30 +21,31 @@ defineProps<{
                 <header class="py-8 text-center">
                     <nav class="flex gap-4 px-48">
                         <h1 class="text-xl font-bold">Good Food</h1>
+                        <p class="text-xl font-bold">|</p>
                         <Link
                             :href="route('Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Menu</Link
+                            >เมนูอาหาร</Link
                         >
                         <Link
                             :href="route('Hot_Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Hot Menu</Link
+                            >เมนูแนะนำ</Link
                         >
                         <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Forms</Link
+                            >แบบทดสอบ</Link
                         >
                         <Link
                             :href="route('About')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >About</Link
+                            >เกี่ยวกับเรา</Link
                         >
                         <Link
                             :href="route('Contact')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Contact</Link
+                            >ติดต่อเรา</Link
                         >
                     </nav>
                 </header>

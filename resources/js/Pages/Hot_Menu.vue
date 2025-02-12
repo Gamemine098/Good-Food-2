@@ -26,26 +26,27 @@ defineProps<{
                         >
                             <h1 class="text-xl font-bold">Good Food</h1></Link
                         >
+                        <p class="text-xl font-bold">|</p>
                         <Link
                             :href="route('Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Menu</Link
+                            >เมนู</Link
                         >
-                        <h1 class="text-xl underline">Hot Menu</h1>
+                        <h1 class="text-xl underline">เมนูแนะนำ</h1>
                         <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Forms</Link
+                            >แบบฟอร์ม</Link
                         >
                         <Link
                             :href="route('About')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >About</Link
+                            >เกี่ยวกับเรา</Link
                         >
                         <Link
                             :href="route('Contact')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >Contact</Link
+                            >ติดต่อเรา</Link
                         >
                     </nav>
                 </header>
