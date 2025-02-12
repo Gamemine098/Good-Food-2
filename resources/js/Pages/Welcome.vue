@@ -283,11 +283,6 @@ defineProps<{
                             >เมนูอาหาร</Link
                         >
                         <Link
-                            :href="route('Hot_Menu')"
-                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >เมนูแนะนำ</Link
-                        >
-                        <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >แบบทดสอบ</Link

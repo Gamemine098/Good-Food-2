@@ -166,7 +166,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${ssrRenderAttrs(_attrs)}><div class="min-h-screen bg-gray-100 dark:bg-gray-900"><nav class="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="flex h-16 justify-between"><div class="flex"><div class="flex shrink-0 items-center">`);
       _push(ssrRenderComponent(unref(Link), {
-        href: _ctx.route("dashboard")
+        href: _ctx.route("Welcome")
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {

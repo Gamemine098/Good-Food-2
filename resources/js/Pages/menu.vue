@@ -284,11 +284,6 @@ defineProps<{
                         <p class="text-xl font-bold">|</p>
                         <h1 class="text-xl underline">เมนูอาหาร</h1>
                         <Link
-                            :href="route('Hot_Menu')"
-                            class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >เมนูแนะนำ</Link
-                        >
-                        <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >แบบทดสอบ</Link

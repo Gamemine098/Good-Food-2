@@ -29,13 +29,6 @@ Route::get('/Menu', function () {
     ]);
 })->name('Menu');
 
-Route::get('/Hot_Menu', function () {
-    return Inertia::render('Hot_Menu', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-    ]);
-})->name('Hot_Menu');
-
 Route::get('/Forms', function () {
     return Inertia::render('Forms', [
         'canLogin' => Route::has('login'),
