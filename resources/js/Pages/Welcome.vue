@@ -13,8 +13,8 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
-                <header class="text-center">
-                    <nav class="flex gap-6 px-48 py-7 shadow-md">
+                <header class="sticky top-0 text-center">
+                    <nav class="flex gap-6 bg-white px-48 py-7 shadow-md">
                         <svg
                             height="33px"
                             width="33px"
@@ -306,7 +306,7 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="my-20">
+                <main class="py-20">
                     <div
                         class="flex columns-2 items-center justify-center gap-36"
                     >
@@ -334,23 +334,122 @@ defineProps<{
                             src="https://i2-prod.getsurrey.co.uk/incoming/article30904976.ece/ALTERNATES/s615/0_GettyImages-1398073318.jpg"
                             alt="Healthy Food"
                             loading="lazy"
-                            class="rounded-lg shadow-md"
+                            class="rounded-lg border-4 border-lime-500 shadow-md"
                         />
                     </div>
                     <div
-                        class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                        class="mx-56 mt-24 rounded-lg border-4 border-lime-500 bg-slate-50 p-5 shadow-md"
                     >
                         <div class="mx-4 my-2">
                             <h1
-                                class="text-2xl transition-all hover:text-lime-600 hover:transition-all"
+                                class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
-                            <p class="mt-2 text-xl">
+                            <p class="mt-2 text-2xl">
                                 การรับประทานอาหารเพื่อสุขภาพเริ่มต้นด้วยการเลือกอาหารที่มีประโยชน์ต่อสุขภาพ
                                 คุณไม่จำเป็นต้องเป็นเชฟก็สามารถปรุงอาหารที่มีคุณค่าทางโภชนาการและดีต่อสุขภาพหัวใจที่ครอบครัวของคุณจะต้องชื่นชอบได้
                                 เรียนรู้ว่าควรเลือกอาหารประเภทใดในร้านขายของชำ
                                 ร้านอาหาร ที่ทำงาน และโอกาสรับประทานอาหารอื่นๆ
+                            </p>
+                            <a
+                                href="#moreinfo1"
+                                class="mt-2 text-2xl text-lime-600 hover:underline"
+                                >ข้อมูลเพื่มเติม</a
+                            >
+                        </div>
+                    </div>
+                    <div id="moreinfo1" class="pt-1">
+                        <div
+                            class="mx-56 mt-36 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                        >
+                            <div class="container mx-4 my-2 columns-2 gap-48">
+                                <h1
+                                    class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                >
+                                    อาหารเพื่อสุขภาพหัวใจ
+                                </h1>
+                                <p class="mt-2 text-2xl">
+                                    เรียนรู้ทุกอย่างเกี่ยวกับการรับรองเครื่องหมาย
+                                    Heart-Check ของสมาคมโรคหัวใจแห่งสหรัฐอเมริกา
+                                    ซึ่งทำให้ง่ายต่อการระบุอาหารเพื่อสุขภาพหัวใจในร้านขายของชำหรือเมื่อรับประทานอาหารนอกบ้าน
+                                </p>
+                                <img
+                                    src="https://www.heart.org/en/-/media/Healthy-Living-Images/Heart-Check/HCinGroceryStore2.jpg?h=648&iar=0&mw=1910&w=1152&sc_lang=en"
+                                    alt="Heart-Check Certification"
+                                    class="ml-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                    >
+                        <div class="mx-4 my-2 columns-2 gap-48">
+                            <img
+                                src="https://s3vmwebprd.s3.ap-southeast-1.amazonaws.com/public/articles/154V9jWgL17oC0qK8GLVJdgCMW8cI1JAAvUELoFD.jpg"
+                                alt="Heart-Check Certification"
+                                class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                            />
+                            <h1
+                                class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                            >
+                                อาหารผู้ป่วย
+                            </h1>
+                            <p class="mt-2 text-right text-2xl">
+                                เป็นอาหารที่จะช่วยปรับปรุงสภาพร่างกาย
+                                และเสริมสร้างภูมิคุ้มกันร่างกายให้กับผู้ป่วยติดเตียง
+                                พร้อมกันนั้นยังทำให้ผู้ป่วยได้รับพลังงาน
+                                และสารอาหารที่เพียงพอต่อการฟื้นฟูสุขภาพ
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                        id="moreinfo1"
+                    >
+                        <div class="container mx-4 my-2 columns-2 gap-48">
+                            <h1
+                                class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                            >
+                                2 : 1 : 1 ลดไขมัน
+                            </h1>
+                            <p class="mt-2 text-2xl">
+                                2 : 1 : 1 เป็นการกำหนดปริมาณอาหารที่เหมาะสม
+                                โดยการแบ่งสัดส่วนของจาน ออกเป็น 4 ส่วน เท่าๆ กัน
+                                และแบ่งประเภทอาหารที่จะใส่ลงไปในจานเป็นผัก 2
+                                ส่วน ข้าวหรือ แป้ง 1 ส่วน และเนื้อสัตว์ 1 ส่วน
+                            </p>
+                            <img
+                                src="https://www.nestleprofessional.co.th/sites/default/files/2024-08/shutterstock_558298840.jpg"
+                                alt="Heart-Check Certification"
+                                class="ml-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                    >
+                        <div class="mx-4 my-2 columns-2 gap-48">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLF_UQGkau6iS59nDxUNHcc6zQH_nVK2enShMZEKL4zHNRte_"
+                                alt="Heart-Check Certification"
+                                class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                            />
+                            <h1
+                                class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                            >
+                                ดื่มน้ำ ให้ดีต่อร่างกาย
+                            </h1>
+                            <p class="mt-2 text-right text-2xl">
+                                น้ำเป็นส่วนประกอบที่สำคัญในร่างกาย
+                                เพราะร่างกายมีน้ำเป็นส่วนประกอบกว่าร้อยละ 70
+                                และยังเป็นส่วนประกอบสำคัญของเซลล์ในร่างกาย
+                                ช่วยในการนำของเสียออกจากร่างกาย
+                                ช่วยลำเลียงอาหารที่ย่อยแล้วไปยังส่วนต่าง ๆ
+                                และช่วยในการควบคุมอุณหภูมิของร่างกาย
+                                เพราะฉะนั้นการ ดื่มน้ำ
+                                เป็นวิธีการสำคัญที่จำเป็นต้องทำ
                             </p>
                         </div>
                     </div>
