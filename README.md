@@ -10,7 +10,6 @@
 ```
 composer install
 npm install
-npm run build
 ```
 
 ## Preview website
