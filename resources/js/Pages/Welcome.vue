@@ -385,7 +385,7 @@ defineProps<{
                     <div
                         class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
                     >
-                        <div class="mx-4 my-2 columns-2 gap-48">
+                        <div class="gap-42 mx-4 my-2 columns-2">
                             <img
                                 src="https://s3vmwebprd.s3.ap-southeast-1.amazonaws.com/public/articles/154V9jWgL17oC0qK8GLVJdgCMW8cI1JAAvUELoFD.jpg"
                                 alt="Heart-Check Certification"

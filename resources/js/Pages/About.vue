@@ -13,8 +13,8 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
-                <header class="text-center">
-                    <nav class="flex gap-6 px-48 py-7 shadow-md">
+                <header class="sticky top-0 text-center">
+                    <nav class="flex gap-6 bg-white px-48 py-7 shadow-md">
                         <svg
                             height="33px"
                             width="33px"
@@ -285,7 +285,7 @@ defineProps<{
                         <Link
                             :href="route('Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >เมนู</Link
+                            >เมนูอาหาร</Link
                         >
                         <Link
                             :href="route('Hot_Menu')"
@@ -295,7 +295,7 @@ defineProps<{
                         <Link
                             :href="route('Forms')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
-                            >แบบฟอร์ม</Link
+                            >แบบทดสอบ</Link
                         >
                         <h1 class="text-xl underline">เกี่ยวกับเรา</h1>
                         <Link

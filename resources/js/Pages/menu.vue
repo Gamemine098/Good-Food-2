@@ -13,8 +13,8 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
-                <header class="text-center">
-                    <nav class="flex gap-6 px-48 py-7 shadow-md">
+                <header class="sticky top-0 text-center">
+                    <nav class="flex gap-6 bg-white px-48 py-7 shadow-md">
                         <svg
                             height="33px"
                             width="33px"
@@ -282,7 +282,7 @@ defineProps<{
                             <h1 class="text-xl font-bold">Good Food</h1></Link
                         >
                         <p class="text-xl font-bold">|</p>
-                        <h1 class="text-xl underline">เมนู</h1>
+                        <h1 class="text-xl underline">เมนูอาหาร</h1>
                         <Link
                             :href="route('Hot_Menu')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
@@ -307,9 +307,117 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="mt-6">
-                    <p class="text-center">Welcome to the Menu Page</p>
-                    <p class="text-center">Explore our delicious offerings!</p>
+                <main class="py-20">
+                    <div class="my-10 flex items-center justify-center">
+                        <div
+                            class="grid grid-cols-3 gap-20 rounded-md text-center"
+                        >
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://images.deliveryhero.io/image/fd-th/LH/wi07-listing.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดกระเพรา</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://img.wongnai.com/p/1920x0/2021/03/30/22196b9c56554269a3d2a30e2da9e0a5.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดพริกแกง</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://s359.kapook.com/pagebuilder/a8a1fb49-f651-40a5-9705-26a98ab0ea66.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดคะน้า</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-10 flex items-center justify-center">
+                        <div
+                            class="grid grid-cols-3 gap-20 rounded-md text-center"
+                        >
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://s359.kapook.com/pagebuilder/60872799-48a8-4984-bd49-08e163d2505f.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดแขนง</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://f.btwcdn.com/store-45841/blog_image/16457/140bea81-559d-dc79-1f3e-6710aba40103.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดผักกรวม</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://img-global.cpcdn.com/recipes/1258b01e3e1f2889/400x400cq70/photo.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดผงกะหรี่</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-10 flex items-center justify-center">
+                        <div
+                            class="grid grid-cols-3 gap-20 rounded-md text-center"
+                        >
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://www.maggi.co.th/sites/default/files/styles/home_stage_944_531/public/srh_recipes/471189e42827fcba39357753a3887a8a.jpg?h=09433bb2&itok=mwZyhAOO"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดน้ำมันหอย</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://s359.kapook.com/pagebuilder/7ba75a92-1a9f-431f-8b6f-23db9b5ffda8.jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">ผัดพริกหยวก</div>
+                                </div>
+                            </div>
+                            <div class="max-w-sm rounded-lg border">
+                                <div class="rounded-lg">
+                                    <img
+                                        src="https://s.isanook.com/wo/0/ud/33/167137/f.jpg?ip/crop/w670h402/q80/jpg"
+                                        alt=""
+                                        class="h-72 w-96 rounded-lg object-cover"
+                                    />
+                                    <div class="py-3 text-xl">
+                                        ปลาผัดขึ้นฉ่าย
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <!-- Footer -->
