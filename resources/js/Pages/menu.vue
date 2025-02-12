@@ -423,7 +423,7 @@ defineProps<{
                 <!-- Footer -->
                 <footer
                     v-if="canLogin"
-                    class="sticky w-full bg-black px-1 py-16 text-white"
+                    class="w-full bg-black px-1 py-16 text-white"
                 >
                     <div class="mx-36">
                         <h1
