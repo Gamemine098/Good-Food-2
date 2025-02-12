@@ -13,8 +13,8 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
-                <header class="py-8 text-center">
-                    <nav class="flex gap-6 px-48">
+                <header class="text-center">
+                    <nav class="flex gap-6 px-48 py-7 shadow-md">
                         <Link
                             :href="route('Welcome')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"

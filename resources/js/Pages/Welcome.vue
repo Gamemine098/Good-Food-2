@@ -77,6 +77,23 @@ defineProps<{
                             class="rounded-lg shadow-md"
                         />
                     </div>
+                    <div
+                        class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                    >
+                        <div class="mx-4 my-2">
+                            <h1
+                                class="text-2xl transition-all hover:text-lime-600 hover:transition-all"
+                            >
+                                อาหารเพื่อสุขภาพ
+                            </h1>
+                            <p class="mt-2 text-xl">
+                                การรับประทานอาหารเพื่อสุขภาพเริ่มต้นด้วยการเลือกอาหารที่มีประโยชน์ต่อสุขภาพ
+                                คุณไม่จำเป็นต้องเป็นเชฟก็สามารถปรุงอาหารที่มีคุณค่าทางโภชนาการและดีต่อสุขภาพหัวใจที่ครอบครัวของคุณจะต้องชื่นชอบได้
+                                เรียนรู้ว่าควรเลือกอาหารประเภทใดในร้านขายของชำ
+                                ร้านอาหาร ที่ทำงาน และโอกาสรับประทานอาหารอื่นๆ
+                            </p>
+                        </div>
+                    </div>
                 </main>
 
                 <!-- Footer -->
