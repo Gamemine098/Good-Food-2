@@ -51,51 +51,78 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="my-2">
-                    <h1>Hello World!</h1>
+                <main class="container mx-auto my-7 min-h-screen">
+                    <div class="">
+                        <h1 class="text-3xl">อาหารเพื่อสุขภาพ</h1>
+                        <p class="text-2xl">
+                            ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
+                        </p>
+                        <Link
+                            :href="route('Forms')"
+                            class="btn m-auto rounded-md px-3 py-2"
+                        >
+                            <button
+                                class="w-44 rounded-lg bg-lime-300 text-center text-2xl"
+                            >
+                                ทำแบบทดสอบ
+                            </button>
+                        </Link>
+                    </div>
                 </main>
 
                 <!-- Footer -->
                 <footer
                     v-if="canLogin"
-                    class="bg-gray-600 px-1 py-16 text-center text-sm text-white"
+                    class="sticky w-full bg-black px-1 py-16 text-white"
                 >
-                    <div>
-                        <h1>สาขาวิชาเทคโนโลยีสารสนเทศ</h1>
-                        <p>
-                            ผลิตและพัฒนากำลังคนสายอาชีพด้านเทคโนโลยีสารสนเทศ
-                            ให้เป็นกำลังคนที่มีคุณภาพและสมรรถนะสูง
-                            เพื่อเป็นกำลังหลักสำคัญในการเพิ่มขีดความสามารถในการแข่งขันของประเทศ.
-                        </p>
+                    <div class="mx-36">
+                        <h1
+                            class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
+                        >
+                            สาขาวิชาเทคโนโลยีสารสนเทศ
+                        </h1>
+                        <div class="mt-2 text-left">
+                            <p>
+                                ผลิตและพัฒนากำลังคนสายอาชีพด้านเทคโนโลยีสารสนเทศ
+                            </p>
+                            <p>ให้เป็นกำลังคนที่มีคุณภาพและสมรรถนะสูง</p>
+                            <p>
+                                เพื่อเป็นกำลังหลักสำคัญในการเพิ่มขีดความสามารถในการแข่งขันของประเทศ.
+                            </p>
+                        </div>
                     </div>
                     <br />
-                    <div>
-                        Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
-                        วิทยาลัยเทคนิคเชียงใหม่ | All Rights Reserved
-                    </div>
-                    <Link
-                        v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
-                        class="rounded-md px-3 py-2 hover:text-red-500"
-                    >
-                        Dashboard
-                    </Link>
-
-                    <div v-else>
-                        <Link
-                            :href="route('login')"
-                            class="rounded-md px-3 py-2 hover:text-red-500"
+                    <div class="mx-36 text-right text-sm">
+                        <span
+                            >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
+                            วิทยาลัยเทคนิคเชียงใหม่</span
                         >
-                            Log in
-                        </Link>
+                        <div class="mt-2">
+                            <Link
+                                v-if="$page.props.auth.user"
+                                :href="route('dashboard')"
+                                class="rounded-md px-3 py-2 hover:text-red-500"
+                            >
+                                Dashboard
+                            </Link>
 
-                        <Link
-                            v-if="canRegister"
-                            :href="route('register')"
-                            class="rounded-md px-3 py-2 hover:text-red-500"
-                        >
-                            Register
-                        </Link>
+                            <div v-else>
+                                <Link
+                                    :href="route('login')"
+                                    class="rounded-md px-3 py-2 hover:text-red-500"
+                                >
+                                    Log in
+                                </Link>
+
+                                <Link
+                                    v-if="canRegister"
+                                    :href="route('register')"
+                                    class="rounded-md px-3 py-2 hover:text-red-500"
+                                >
+                                    Register
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </footer>
             </div>
