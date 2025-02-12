@@ -18,8 +18,8 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
-                <header class="py-8 text-center">
-                    <nav class="flex gap-4 px-48">
+                <header class="text-center">
+                    <nav class="flex gap-4 px-48 py-7 shadow-md">
                         <h1 class="text-xl font-bold">Good Food</h1>
                         <p class="text-xl font-bold">|</p>
                         <Link
@@ -51,29 +51,42 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="container mx-auto my-7 min-h-screen">
-                    <div class="">
-                        <h1 class="text-3xl">อาหารเพื่อสุขภาพ</h1>
-                        <p class="text-2xl">
-                            ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
-                        </p>
-                        <Link
-                            :href="route('Forms')"
-                            class="btn m-auto rounded-md px-3 py-2"
-                        >
-                            <button
-                                class="w-44 rounded-lg bg-lime-300 text-center text-2xl"
+                <main class="my-20">
+                    <div
+                        class="flex columns-2 items-center justify-center gap-36"
+                    >
+                        <div>
+                            <h1
+                                class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
                             >
-                                ทำแบบทดสอบ
-                            </button>
-                        </Link>
+                                อาหารเพื่อสุขภาพ
+                            </h1>
+                            <p class="text-2xl">
+                                ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
+                            </p>
+                            <Link
+                                :href="route('Forms')"
+                                class="btn rounded-md px-3 py-2"
+                            >
+                                <button
+                                    class="mt-3 w-44 rounded-lg bg-lime-300 text-center text-2xl transition-all hover:shadow-md hover:transition-all"
+                                >
+                                    ทำแบบทดสอบ
+                                </button>
+                            </Link>
+                        </div>
+                        <img
+                            src="https://i2-prod.getsurrey.co.uk/incoming/article30904976.ece/ALTERNATES/s615/0_GettyImages-1398073318.jpg"
+                            alt=""
+                            class="rounded-lg shadow-md"
+                        />
                     </div>
                 </main>
 
                 <!-- Footer -->
                 <footer
                     v-if="canLogin"
-                    class="sticky w-full bg-black px-1 py-16 text-white"
+                    class="w-full bg-black px-1 py-16 text-white"
                 >
                     <div class="mx-36">
                         <h1
