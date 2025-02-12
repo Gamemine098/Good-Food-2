@@ -60,31 +60,62 @@ defineProps<{
                 <!-- Footer -->
                 <footer
                     v-if="canLogin"
-                    class="bg-slate-300 px-1 py-16 text-center text-sm"
+                    class="sticky w-full bg-black px-1 py-16 text-white"
                 >
-                    <Link
-                        v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
-                        class="rounded-md px-3 py-2 hover:text-red-500"
+                    <div class="mx-36">
+                        <h1
+                            class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
+                        >
+                            สาขาวิชาเทคโนโลยีสารสนเทศ
+                        </h1>
+                        <div class="mt-2 text-left">
+                            <p>
+                                ผลิตและพัฒนากำลังคนสายอาชีพด้านเทคโนโลยีสารสนเทศ
+                            </p>
+                            <p>ให้เป็นกำลังคนที่มีคุณภาพและสมรรถนะสูง</p>
+                            <p>
+                                เพื่อเป็นกำลังหลักสำคัญในการเพิ่มขีดความสามารถในการแข่งขันของประเทศ.
+                            </p>
+                        </div>
+                    </div>
+                    <br />
+                    <div
+                        class="container mx-36 mt-3 columns-2 text-right text-sm"
                     >
-                        Dashboard
-                    </Link>
-
-                    <div v-else>
-                        <Link
-                            :href="route('login')"
-                            class="rounded-md px-3 py-2 hover:text-red-500"
+                        <img
+                            src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
+                            alt="it logo"
+                        />
+                        <span
+                            >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
+                            วิทยาลัยเทคนิคเชียงใหม่</span
                         >
-                            Log in
-                        </Link>
+                        <div class="mt-2">
+                            <Link
+                                v-if="$page.props.auth.user"
+                                :href="route('dashboard')"
+                                class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
+                            >
+                                Dashboard
+                            </Link>
 
-                        <Link
-                            v-if="canRegister"
-                            :href="route('register')"
-                            class="rounded-md px-3 py-2 hover:text-red-500"
-                        >
-                            Register
-                        </Link>
+                            <div v-else>
+                                <Link
+                                    :href="route('login')"
+                                    class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
+                                >
+                                    Log in
+                                </Link>
+
+                                <Link
+                                    v-if="canRegister"
+                                    :href="route('register')"
+                                    class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
+                                >
+                                    Register
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </footer>
             </div>

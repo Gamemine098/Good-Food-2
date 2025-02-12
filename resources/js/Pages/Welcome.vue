@@ -92,7 +92,13 @@ defineProps<{
                         </div>
                     </div>
                     <br />
-                    <div class="mx-36 text-right text-sm">
+                    <div
+                        class="container mx-36 mt-3 columns-2 text-right text-sm"
+                    >
+                        <img
+                            src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
+                            alt="it logo"
+                        />
                         <span
                             >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
                             วิทยาลัยเทคนิคเชียงใหม่</span
@@ -101,7 +107,7 @@ defineProps<{
                             <Link
                                 v-if="$page.props.auth.user"
                                 :href="route('dashboard')"
-                                class="rounded-md px-3 py-2 hover:text-red-500"
+                                class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
                             >
                                 Dashboard
                             </Link>
@@ -109,7 +115,7 @@ defineProps<{
                             <div v-else>
                                 <Link
                                     :href="route('login')"
-                                    class="rounded-md px-3 py-2 hover:text-red-500"
+                                    class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
                                 >
                                     Log in
                                 </Link>
@@ -117,7 +123,7 @@ defineProps<{
                                 <Link
                                     v-if="canRegister"
                                     :href="route('register')"
-                                    class="rounded-md px-3 py-2 hover:text-red-500"
+                                    class="px-3 py-2 transition-colors hover:text-red-500 hover:transition-colors"
                                 >
                                     Register
                                 </Link>
