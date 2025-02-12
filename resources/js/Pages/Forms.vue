@@ -11,6 +11,7 @@ const form = ref({
     sex: '',
     age: '',
     weight: '',
+    exercise: '',
 });
 
 const submitForm = () => {
@@ -32,8 +33,6 @@ const submitForm = () => {
                             width="33px"
                             version="1.1"
                             id="Capa_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 320.718 320.718"
                             xml:space="preserve"
                             fill="#000000"
@@ -367,6 +366,37 @@ const submitForm = () => {
                                     min="1"
                                     required
                                 />
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    for="exercise"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >ระดับการออกกำลังกายของคุณ</label
+                                >
+                                <select
+                                    id="exercise"
+                                    v-model="form.exercise"
+                                    class="mt-1 block rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                >
+                                    <option value="" disabled>
+                                        กรุณาเลือกระดับการออกกำลังกายของคุณ
+                                    </option>
+                                    <option value="low">
+                                        น้อย/ไม่ออกกำลังกาย
+                                    </option>
+                                    <option value="moderate1">
+                                        ปานกลาง/1-3 ครั้งต่อสัปดาห์
+                                    </option>
+                                    <option value="moderate2">
+                                        ปานกลาง/4-5 ครั้งต่อสัปดาห์
+                                    </option>
+                                    <option value="high">
+                                        หนัก/6-7 ครั้งต่อสัปดาห์
+                                    </option>
+                                    <option value="very_high">
+                                        หนักมาก/2 ครั้งต่อวัน
+                                    </option>
+                                </select>
                             </div>
                             <button
                                 type="submit"
