@@ -10,16 +10,11 @@ defineProps<{
 <template>
     <Head title="Welcome" />
     <div>
-        <img
-            id="background"
-            class="absolute -left-20 top-0 max-w-[877px]"
-            src=""
-        />
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative w-full">
                 <!-- Navbar -->
                 <header class="text-center">
-                    <nav class="flex gap-4 px-48 py-7 shadow-md">
+                    <nav class="flex gap-6 px-48 py-7 shadow-md">
                         <h1 class="text-xl font-bold">Good Food</h1>
                         <p class="text-xl font-bold">|</p>
                         <Link
@@ -61,7 +56,7 @@ defineProps<{
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
-                            <p class="text-2xl">
+                            <p class="mt-1 text-2xl">
                                 ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
                             </p>
                             <Link
@@ -69,7 +64,7 @@ defineProps<{
                                 class="btn rounded-md px-3 py-2"
                             >
                                 <button
-                                    class="mt-3 w-44 rounded-lg bg-lime-300 text-center text-2xl transition-all hover:shadow-md hover:transition-all"
+                                    class="mt-3 h-10 w-44 rounded-lg bg-lime-300 text-center text-xl transition-all hover:shadow-md hover:transition-all"
                                 >
                                     ทำแบบทดสอบ
                                 </button>
@@ -77,7 +72,8 @@ defineProps<{
                         </div>
                         <img
                             src="https://i2-prod.getsurrey.co.uk/incoming/article30904976.ece/ALTERNATES/s615/0_GettyImages-1398073318.jpg"
-                            alt=""
+                            alt="Healthy Food"
+                            loading="lazy"
                             class="rounded-lg shadow-md"
                         />
                     </div>
@@ -111,6 +107,7 @@ defineProps<{
                         <img
                             src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
                             alt="it logo"
+                            loading="lazy"
                         />
                         <span
                             >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ
