@@ -8,10 +8,14 @@ defineProps<{
 }>();
 
 const form = ref({
-    sex: '',
+    gender: '',
     age: '',
     weight: '',
     exercise: '',
+    goal: '',
+    reason: '',
+    reason_not_healthy: '',
+    health_interest: '',
 });
 
 const submitForm = () => {
@@ -319,13 +323,13 @@ const submitForm = () => {
                         <form @submit.prevent="submitForm">
                             <div class="mb-4">
                                 <label
-                                    for="sex"
+                                    for="gender"
                                     class="block text-sm font-medium text-gray-700"
                                     >เพศ</label
                                 >
                                 <select
-                                    id="sex"
-                                    v-model="form.sex"
+                                    id="gender"
+                                    v-model="form.gender"
                                     class="mt-1 block w-32 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
                                 >
                                     <option value="" disabled>
@@ -395,6 +399,104 @@ const submitForm = () => {
                                     </option>
                                     <option value="very_high">
                                         หนักมาก/2 ครั้งต่อวัน
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    for="goal"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >เป้าหมาย</label
+                                >
+                                <select
+                                    id="goal"
+                                    v-model="form.goal"
+                                    class="mt-1 block w-56 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                >
+                                    <option value="" disabled>
+                                        กรุณาเลือกเป้าหมายของคุณ
+                                    </option>
+                                    <option value="muscle_gain">
+                                        เพิ่มกล้ามเนื้อ
+                                    </option>
+                                    <option value="fat_loss">ลดไขมัน</option>
+                                    <option value="muscle_maintenance">
+                                        รักษากล้ามเนื้อ
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    for="reason"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >สาเหตุที่รับประทานเพื่อสุขภาพ</label
+                                >
+                                <select
+                                    id="reason"
+                                    v-model="form.reason"
+                                    class="mt-1 block w-72 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                >
+                                    <option value="" disabled>
+                                        กรุณาเลือกสาเหตุที่รับประทานเพื่อสุขภาพ
+                                    </option>
+                                    <option value="healthy">
+                                        เพื่อให้สุขภาพแข็งแรง
+                                    </option>
+                                    <option value="weight_loss">
+                                        ต้องการลดน้ำหนัก
+                                    </option>
+                                    <option value="try">อยากลอง</option>
+                                    <option value="influence">
+                                        รับประทานตามคนใกล้ชิด
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    for="reason_not_healthy"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >สาเหตุที่ไม่รับประทานเพื่อสุขภาพ</label
+                                >
+                                <select
+                                    id="reason_not_healthy"
+                                    v-model="form.reason_not_healthy"
+                                    class="mt-1 block rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    style="width: 300px"
+                                >
+                                    <option value="" disabled>
+                                        กรุณาเลือกสาเหตุที่ไม่รับประทานเพื่อสุขภาพ
+                                    </option>
+                                    <option value="taste">
+                                        รสชาติไม่อร่อย
+                                    </option>
+                                    <option value="hard_to_find">
+                                        หารับประทานยาก
+                                    </option>
+                                    <option value="expensive">ราคาแพง</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    for="health_interest"
+                                    class="block text-sm font-medium text-gray-700"
+                                    >มีความสนใจในสุขภาพทางด้านใด</label
+                                >
+                                <select
+                                    id="health_interest"
+                                    v-model="form.health_interest"
+                                    class="mt-1 block w-72 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                >
+                                    <option value="" disabled>
+                                        กรุณาเลือกความสนใจในสุขภาพทางด้านใด
+                                    </option>
+                                    <option value="exercise">
+                                        การออกกำลังกาย
+                                    </option>
+                                    <option value="healthy_eating">
+                                        รับประทานอาหารเพื่อสุขภาพ
+                                    </option>
+                                    <option value="supplements">
+                                        การรับประทานอาหารเสริม
                                     </option>
                                 </select>
                             </div>
