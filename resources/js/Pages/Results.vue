@@ -386,7 +386,7 @@ const healthInterestText = computed(() => {
                 </Link>
             </nav>
         </header>
-        <main class="my-2">
+        <main class="py-20">
             <div class="container mx-56 p-4">
                 <h2 class="mb-4 text-2xl font-bold">ผลลัพธ์</h2>
                 <div class="mb-4">
@@ -411,6 +411,7 @@ const healthInterestText = computed(() => {
                         {{ healthInterestText }}
                     </p>
                 </div>
+                <button></button>
             </div>
         </main>
 

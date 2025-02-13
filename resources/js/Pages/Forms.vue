@@ -323,7 +323,7 @@ const submitForm = () => {
                 </header>
 
                 <!-- Main Content -->
-                <main class="my-2">
+                <main class="py-20">
                     <div class="container mx-56 p-4">
                         <h2 class="mb-4 text-2xl font-bold">แบบทดสอบ</h2>
                         <form @submit.prevent="submitForm">
