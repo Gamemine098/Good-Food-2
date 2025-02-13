@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { Head, Link, router } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { Head, Link, router, useForm } from '@inertiajs/vue3';
 
 defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
 }>();
 
-const form = ref({
+const form = useForm({
     gender: '',
     age: '',
     weight: '',
@@ -19,11 +18,14 @@ const form = ref({
 });
 
 const submitForm = () => {
-    // Navigate to the Results page with form data as query parameters
-    router.visit(route('Results'), {
-        method: 'get',
-        data: form.value,
-        preserveState: true,
+    router.get(route('Results'), form.data(), {
+        preserveState: true, // Add this to preserve the component's state
+        onSuccess: () => {
+            console.log('Form submitted successfully!');
+        },
+        onError: (errors) => {
+            console.error('Form submission failed:', errors);
+        },
     });
 };
 </script>
@@ -335,6 +337,7 @@ const submitForm = () => {
                                     id="gender"
                                     v-model="form.gender"
                                     class="mt-1 block w-32 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกเพศ
@@ -385,6 +388,7 @@ const submitForm = () => {
                                     id="exercise"
                                     v-model="form.exercise"
                                     class="mt-1 block w-72 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกระดับการออกกำลังกายของคุณ
@@ -416,6 +420,7 @@ const submitForm = () => {
                                     id="goal"
                                     v-model="form.goal"
                                     class="mt-1 block w-56 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกเป้าหมายของคุณ
@@ -439,6 +444,7 @@ const submitForm = () => {
                                     id="reason"
                                     v-model="form.reason"
                                     class="mt-1 block w-72 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกสาเหตุที่รับประทานเพื่อสุขภาพ
@@ -466,6 +472,7 @@ const submitForm = () => {
                                     v-model="form.reason_not_healthy"
                                     class="mt-1 block rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
                                     style="width: 300px"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกสาเหตุที่ไม่รับประทานเพื่อสุขภาพ
@@ -489,6 +496,7 @@ const submitForm = () => {
                                     id="health_interest"
                                     v-model="form.health_interest"
                                     class="mt-1 block w-72 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    required
                                 >
                                     <option value="" disabled>
                                         กรุณาเลือกความสนใจในสุขภาพทางด้านใด
