@@ -31,9 +31,7 @@ const exerciseText = computed(() => {
     } else if (props.exercise === 'moderate2') {
         return 'ปานกลาง/4-5 ครั้งต่อสัปดาห์';
     } else if (props.exercise === 'high') {
-        return 'หนัก/6-7 ครั้งต่อสัปดาห์';
-    } else if (props.exercise === 'very_high') {
-        return 'หนักมาก/2 ครั้งต่อวัน';
+        return 'มาก/ทุกวัน';
     } else {
         return 'ไม่ระบุ';
     }
@@ -87,6 +85,39 @@ const healthInterestText = computed(() => {
     } else {
         return 'ไม่ระบุ';
     }
+});
+
+// recommend base from forms
+const male_low_musclegain = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'low' &&
+        props.goal === 'muscle_gain'
+    );
+});
+
+const male_moderate1_musclegain = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'moderate1' &&
+        props.goal === 'muscle_gain'
+    );
+});
+
+const male_moderate2_musclegain = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'moderate2' &&
+        props.goal === 'muscle_gain'
+    );
+});
+
+const male_high_musclegain = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'high' &&
+        props.goal === 'muscle_gain'
+    );
 });
 </script>
 
@@ -388,30 +419,75 @@ const healthInterestText = computed(() => {
         </header>
         <main class="py-20">
             <div class="container mx-56 p-4">
-                <h2 class="mb-4 text-2xl font-bold">ผลลัพธ์</h2>
-                <div class="mb-4">
-                    <p><strong>เพศ:</strong> {{ genderText }}</p>
-                    <p><strong>อายุ:</strong> {{ age }}</p>
-                    <p><strong>น้ำหนัก:</strong> {{ weight }}</p>
-                    <p>
+                <h2 class="mb-4 text-2xl font-bold">คำตอบที่คุณเลือก</h2>
+                <div class="my-4">
+                    <p class="text-xl">
+                        <strong>เพศ:</strong> {{ genderText }}
+                    </p>
+                    <p class="text-xl"><strong>อายุ:</strong> {{ age }}</p>
+                    <p class="text-xl">
+                        <strong>น้ำหนัก:</strong> {{ weight }}
+                    </p>
+                    <p class="text-xl">
                         <strong>ระดับการออกกำลังกาย:</strong>
                         {{ exerciseText }}
                     </p>
-                    <p><strong>เป้าหมาย:</strong> {{ goalText }}</p>
-                    <p>
+                    <p class="text-xl">
+                        <strong>เป้าหมาย:</strong> {{ goalText }}
+                    </p>
+                    <p class="text-xl">
                         <strong>สาเหตุที่รับประทานเพื่อสุขภาพ:</strong>
                         {{ reasonText }}
                     </p>
-                    <p>
+                    <p class="text-xl">
                         <strong>สาเหตุที่ไม่รับประทานเพื่อสุขภาพ:</strong>
                         {{ reasonNotHealthyText }}
                     </p>
-                    <p>
+                    <p class="text-xl">
                         <strong>ความสนใจในสุขภาพทางด้านใด:</strong>
                         {{ healthInterestText }}
                     </p>
                 </div>
-                <button></button>
+                <!-- IF -->
+                <div v-if="male_low_musclegain" class="text-xl">
+                    <p>เน้น โปรตีน คาร์โบไฮเดรต และไขมันที่ดีต่อสุขภาพ</p>
+                    <p>ควรลองออกกำลังกายเบา ๆ</p>
+                </div>
+
+                <div v-if="male_moderate1_musclegain" class="text-xl">
+                    <p>เน้น โปรตีน คาร์โบไฮเดรต และไขมันที่ดีต่อสุขภาพ</p>
+                    <p>
+                        เน้น เวทเทรนนิ่ง และ คาร์ดิโอแบบพอเหมาะ
+                        เพื่อกระตุ้นการเติบโตของกล้ามเนื้อ
+                    </p>
+                </div>
+
+                <div v-if="male_moderate2_musclegain" class="text-xl">
+                    <p>กินโปรตีน 1.8-2.4 กรัม/กก. + แคลอรีให้เกินเล็กน้อย</p>
+                    <p>
+                        ฝึกเวท 4-5 ครั้ง/สัปดาห์ (Push-Pull-Legs หรือ Split
+                        Routine)
+                    </p>
+                    <p>เพิ่มน้ำหนักหรือจำนวนครั้งทุกสัปดาห์</p>
+                    <p>พักผ่อนให้เพียงพอและดื่มน้ำมาก ๆ</p>
+                </div>
+
+                <div v-if="male_high_musclegain" class="text-xl">
+                    <p>
+                        กินโปรตีน 2.0-2.5 กรัม/กก. + แคลอรีให้เกิน TDEE 15-20%
+                    </p>
+                    <p>ฝึกเวททุกวัน (Bro Split หรือ Upper-Lower)</p>
+                    <p>มีวันฝึกเบา ๆ เพื่อป้องกันอาการโอเวอร์เทรนนิ่ง</p>
+                    <p>พักผ่อนให้เพียงพอและดื่มน้ำมาก ๆ</p>
+                </div>
+                <!-- End -->
+                <Link :href="route('Forms')">
+                    <button
+                        class="mt-5 rounded bg-green-500 px-4 py-2 text-white transition-all hover:shadow-md hover:transition-all"
+                    >
+                        ทำแบบทดสอบอีกครั้ง
+                    </button>
+                </Link>
             </div>
         </main>
 

@@ -402,12 +402,7 @@ const submitForm = () => {
                                     <option value="moderate2">
                                         ปานกลาง/4-5 ครั้งต่อสัปดาห์
                                     </option>
-                                    <option value="high">
-                                        หนัก/6-7 ครั้งต่อสัปดาห์
-                                    </option>
-                                    <option value="very_high">
-                                        หนักมาก/2 ครั้งต่อวัน
-                                    </option>
+                                    <option value="high">มาก/ทุกวัน</option>
                                 </select>
                             </div>
                             <div class="mb-4">
