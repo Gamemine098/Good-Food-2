@@ -275,7 +275,11 @@ defineProps<{
                                 </g>
                             </g>
                         </svg>
-                        <h1 class="text-xl font-bold">Good Food</h1>
+                        <h1
+                            class="text-2xl font-bold text-green-400 drop-shadow-2xl"
+                        >
+                            Good Food
+                        </h1>
                         <p class="text-xl font-bold">|</p>
                         <Link
                             :href="route('Menu')"

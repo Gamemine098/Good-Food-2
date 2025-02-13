@@ -386,7 +386,7 @@ const male_high_musclegain = computed(() => {
                 </svg>
                 <Link
                     :href="route('Welcome')"
-                    class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                    class="text-2xl transition-colors hover:text-green-400 hover:transition-colors"
                 >
                     <h1 class="text-xl font-bold">Good Food</h1>
                 </Link>
