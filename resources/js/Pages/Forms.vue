@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 defineProps<{
@@ -19,8 +19,12 @@ const form = ref({
 });
 
 const submitForm = () => {
-    console.log('Form submitted:', form.value);
-    // Add your form submission logic here
+    // Navigate to the Results page with form data as query parameters
+    router.visit(route('Results'), {
+        method: 'get',
+        data: form.value,
+        preserveState: true,
+    });
 };
 </script>
 

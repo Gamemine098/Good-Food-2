@@ -36,6 +36,13 @@ Route::get('/Forms', function () {
     ]);
 })->name('Forms');
 
+Route::get('/Results', function () {
+    return Inertia::render('Results', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
+})->name('Results');
+
 Route::get('/About', function () {
     return Inertia::render('About', [
         'canLogin' => Route::has('login'),
