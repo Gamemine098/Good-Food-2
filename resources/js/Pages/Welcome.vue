@@ -293,7 +293,7 @@ defineProps<{
                             >เกี่ยวกับเรา</Link
                         >
                         <Link
-                            :href="route('Contact')"
+                            :href="route('Welcome')"
                             class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
                             >ติดต่อเรา</Link
                         >
