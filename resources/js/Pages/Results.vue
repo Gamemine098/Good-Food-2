@@ -554,6 +554,9 @@ const male_high_fat_loss = computed(() => {
                     <p>ออกกำลังกายทุกวัน (เวท + คาร์ดิโอ สลับกัน)</p>
                     <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
                 </div>
+                <div v-else class="text-xl">
+                    <p>กรุณาทำใหม่</p>
+                </div>
                 <!-- End -->
                 <Link :href="route('Forms')">
                     <button
