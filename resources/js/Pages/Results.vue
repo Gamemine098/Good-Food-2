@@ -119,6 +119,38 @@ const male_high_musclegain = computed(() => {
         props.goal === 'muscle_gain'
     );
 });
+
+const male_low_fat_loss = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'low' &&
+        props.goal === 'fat_loss'
+    );
+});
+
+const male_moderate1_fat_loss = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'moderate1' &&
+        props.goal === 'fat_loss'
+    );
+});
+
+const male_moderate2_fat_loss = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'moderate2' &&
+        props.goal === 'fat_loss'
+    );
+});
+
+const male_high_fat_loss = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'high' &&
+        props.goal === 'fat_loss'
+    );
+});
 </script>
 
 <template>
@@ -417,6 +449,7 @@ const male_high_musclegain = computed(() => {
                 </Link>
             </nav>
         </header>
+
         <main class="overflow-x-hidden py-20">
             <div class="container mx-56 p-4">
                 <h2
@@ -493,6 +526,33 @@ const male_high_musclegain = computed(() => {
                     <p>ฝึกเวททุกวัน (Bro Split หรือ Upper-Lower)</p>
                     <p>มีวันฝึกเบา ๆ เพื่อป้องกันอาการโอเวอร์เทรนนิ่ง</p>
                     <p>พักผ่อนให้เพียงพอและดื่มน้ำมาก ๆ</p>
+                </div>
+
+                <div v-if="male_low_fat_loss" class="text-xl">
+                    <p>กินแคลอรีต่ำกว่าที่เผาผลาญ 300-500 kcal/วัน</p>
+                    <p>เลือกโปรตีนสูง คาร์บเชิงซ้อน ไขมันดี</p>
+                    <p>ออกกำลังกายเบา ๆ เช่น เดินเร็ว และบอดี้เวท</p>
+                    <p>นอนให้พอ ดื่มน้ำเยอะ ๆ และลดของหวาน</p>
+                </div>
+
+                <div v-if="male_moderate1_fat_loss" class="text-xl">
+                    <p>กินแคลอรีต่ำกว่าที่เผาผลาญ 300-500 kcal/วัน</p>
+                    <p>โปรตีนสูง + คาร์บเชิงซ้อน + ไขมันดี</p>
+                    <p>ฝึกเวท 2-3 ครั้ง/สัปดาห์ + คาร์ดิโอเสริม</p>
+                    <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
+                </div>
+
+                <div v-if="male_moderate2_fat_loss" class="text-xl">
+                    <p>กินแคลอรีต่ำกว่าที่เผาผลาญ 300-500 kcal/วัน</p>
+                    <p>โปรตีนสูง + คาร์บเชิงซ้อน + ไขมันดี</p>
+                    <p>ฝึกเวท 4-5 ครั้ง/สัปดาห์ + คาร์ดิโอเสริม</p>
+                    <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
+                </div>
+                <div v-if="male_high_fat_loss" class="text-xl">
+                    <p>กินแคลอรีต่ำกว่าที่เผาผลาญ 300-500 kcal/วัน</p>
+                    <p>โปรตีนสูง + คาร์บเชิงซ้อน + ไขมันดี</p>
+                    <p>ออกกำลังกายทุกวัน (เวท + คาร์ดิโอ สลับกัน)</p>
+                    <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
                 </div>
                 <!-- End -->
                 <Link :href="route('Forms')">

@@ -376,7 +376,7 @@ defineProps<{
                                 <img
                                     src="https://www.heart.org/en/-/media/Healthy-Living-Images/Heart-Check/HCinGroceryStore2.jpg?h=648&iar=0&mw=1910&w=1152&sc_lang=en"
                                     alt="Heart-Check Certification"
-                                    class="ml-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                                    class="ml-1 h-72 w-96 rounded-lg object-cover shadow-md"
                                 />
                             </div>
                         </div>
@@ -422,34 +422,36 @@ defineProps<{
                             <img
                                 src="https://www.nestleprofessional.co.th/sites/default/files/2024-08/shutterstock_558298840.jpg"
                                 alt="Heart-Check Certification"
-                                class="ml-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                                class="ml-1 h-72 w-96 rounded-lg object-cover shadow-md"
                             />
                         </div>
                     </div>
                     <div
                         class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
                     >
-                        <div class="mx-4 my-2 columns-2 gap-48">
+                        <div class="mx-4 my-2 grid grid-cols-2">
                             <img
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLF_UQGkau6iS59nDxUNHcc6zQH_nVK2enShMZEKL4zHNRte_"
                                 alt="Heart-Check Certification"
                                 class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md"
                             />
-                            <h1
-                                class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
-                            >
-                                ดื่มน้ำ ให้ดีต่อร่างกาย
-                            </h1>
-                            <p class="mt-2 text-right text-2xl">
-                                น้ำเป็นส่วนประกอบที่สำคัญในร่างกาย
-                                เพราะร่างกายมีน้ำเป็นส่วนประกอบกว่าร้อยละ 70
-                                และยังเป็นส่วนประกอบสำคัญของเซลล์ในร่างกาย
-                                ช่วยในการนำของเสียออกจากร่างกาย
-                                ช่วยลำเลียงอาหารที่ย่อยแล้วไปยังส่วนต่าง ๆ
-                                และช่วยในการควบคุมอุณหภูมิของร่างกาย
-                                เพราะฉะนั้นการ ดื่มน้ำ
-                                เป็นวิธีการสำคัญที่จำเป็นต้องทำ
-                            </p>
+                            <div>
+                                <h1
+                                    class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                >
+                                    ดื่มน้ำ ให้ดีต่อร่างกาย
+                                </h1>
+                                <p class="mt-2 text-right text-2xl">
+                                    น้ำเป็นส่วนประกอบที่สำคัญในร่างกาย
+                                    เพราะร่างกายมีน้ำเป็นส่วนประกอบกว่าร้อยละ 70
+                                    และยังเป็นส่วนประกอบสำคัญของเซลล์ในร่างกาย
+                                    ช่วยในการนำของเสียออกจากร่างกาย
+                                    ช่วยลำเลียงอาหารที่ย่อยแล้วไปยังส่วนต่าง ๆ
+                                    และช่วยในการควบคุมอุณหภูมิของร่างกาย
+                                    เพราะฉะนั้นการ ดื่มน้ำ
+                                    เป็นวิธีการสำคัญที่จำเป็นต้องทำ
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </main>
