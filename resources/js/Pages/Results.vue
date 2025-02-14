@@ -151,6 +151,14 @@ const male_high_fat_loss = computed(() => {
         props.goal === 'fat_loss'
     );
 });
+
+const male_low_muscle_maintenance = computed(() => {
+    return (
+        props.gender === 'male' &&
+        props.exercise === 'low' &&
+        props.goal === 'muscle_maintenance'
+    );
+});
 </script>
 
 <template>
@@ -485,7 +493,7 @@ const male_high_fat_loss = computed(() => {
                         {{ healthInterestText }}
                     </p>
                 </div>
-                <!-- IF -->
+                <!-- recommend -->
                 <div
                     class="mb-2 text-2xl font-bold transition-all hover:text-lime-600 hover:transition-all"
                 >
@@ -548,12 +556,21 @@ const male_high_fat_loss = computed(() => {
                     <p>ฝึกเวท 4-5 ครั้ง/สัปดาห์ + คาร์ดิโอเสริม</p>
                     <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
                 </div>
+
                 <div v-if="male_high_fat_loss" class="text-xl">
                     <p>กินแคลอรีต่ำกว่าที่เผาผลาญ 300-500 kcal/วัน</p>
                     <p>โปรตีนสูง + คาร์บเชิงซ้อน + ไขมันดี</p>
                     <p>ออกกำลังกายทุกวัน (เวท + คาร์ดิโอ สลับกัน)</p>
                     <p>ดื่มน้ำเยอะ ๆ และพักผ่อนให้เพียงพอ</p>
                 </div>
+
+                <div v-if="male_low_muscle_maintenance" class="text-xl">
+                    <p>กินแคลอรีให้ใกล้เคียง TDEE + โปรตีนสูง</p>
+                    <p>เคลื่อนไหวร่างกายเป็นประจำ แม้จะไม่ออกกำลังกายหนัก</p>
+                    <p>ดื่มน้ำเยอะ ๆ และนอนหลับให้เพียงพอ</p>
+                </div>
+
+                <!-- else -->
                 <div v-else class="text-xl">
                     <p>กรุณาทำใหม่</p>
                 </div>
