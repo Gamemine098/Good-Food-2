@@ -356,7 +356,7 @@ const submitForm = () => {
                                     type="number"
                                     id="age"
                                     v-model="form.age"
-                                    class="mt-1 block rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+                                    class="mt-1 block w-44 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
                                     placeholder="กรุณากรอกอายุของคุณ"
                                     min="1"
                                     required

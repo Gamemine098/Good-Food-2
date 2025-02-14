@@ -417,9 +417,13 @@ const male_high_musclegain = computed(() => {
                 </Link>
             </nav>
         </header>
-        <main class="py-20">
+        <main class="overflow-x-hidden py-20">
             <div class="container mx-56 p-4">
-                <h2 class="mb-4 text-2xl font-bold">คำตอบที่คุณเลือก</h2>
+                <h2
+                    class="mb-4 text-2xl font-bold transition-all hover:text-lime-600 hover:transition-all"
+                >
+                    คำตอบที่คุณเลือก
+                </h2>
                 <div class="my-4">
                     <p class="text-xl">
                         <strong>เพศ:</strong> {{ genderText }}
@@ -449,6 +453,11 @@ const male_high_musclegain = computed(() => {
                     </p>
                 </div>
                 <!-- IF -->
+                <div
+                    class="mb-2 text-2xl font-bold transition-all hover:text-lime-600 hover:transition-all"
+                >
+                    คำแนะนำ
+                </div>
                 <div v-if="male_low_musclegain" class="text-xl">
                     <p>กินโปรตีนให้มากขึ้น (1.6-2.2 กรัม/กก.)</p>
                     <p>เพิ่มคาร์บและไขมันดี เพื่อให้มีพลังงานเพียงพอ</p>
