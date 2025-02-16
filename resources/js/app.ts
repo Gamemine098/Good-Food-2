@@ -1,3 +1,4 @@
+import '../../node_modules/animate.css/animate.min.css';
 import '../css/app.css';
 import './bootstrap';
 
