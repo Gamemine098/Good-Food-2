@@ -279,7 +279,7 @@ defineProps<{
                                 </g>
                             </svg>
                             <h1
-                                class="text-2xl font-bold text-green-400 drop-shadow-2xl"
+                                class="text-2xl font-bold text-green-500 drop-shadow-2xl"
                             >
                                 Good Food
                             </h1>
@@ -312,40 +312,34 @@ defineProps<{
                 <!-- Main Content -->
                 <main class="bg-slate-100 pb-20 pt-40">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast flex columns-2 items-center justify-center gap-36"
+                        class="animate__animated animate__fadeInUp animate__fast flex columns-2 items-center justify-center gap-36 py-64"
                     >
-                        <div>
+                        <div class="text-center">
                             <h1
-                                class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-600 hover:transition-all"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
-                            <p class="mt-1 text-2xl">
+                            <p class="mb-6 mt-4 text-2xl drop-shadow-md">
                                 ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
                             </p>
                             <Link
                                 :href="route('Forms')"
-                                class="btn rounded-md px-3 py-2"
+                                class="btn rounded-md px-3 py-2 drop-shadow-sm"
                             >
                                 <button
-                                    class="mt-3 h-10 w-44 rounded-lg bg-lime-300 text-center text-xl transition-all hover:shadow-md hover:transition-all"
+                                    class="mt-3 h-10 w-44 rounded-lg border border-black/10 bg-lime-300/40 text-center text-xl drop-shadow-xl backdrop-blur-xl transition-all hover:scale-110 hover:border-black/50 hover:transition-all"
                                 >
                                     ทำแบบทดสอบ
                                 </button>
                             </Link>
                         </div>
-                        <img
-                            src="https://i2-prod.getsurrey.co.uk/incoming/article30904976.ece/ALTERNATES/s615/0_GettyImages-1398073318.jpg"
-                            alt="Healthy Food"
-                            loading="lazy"
-                            class="rounded-lg border-4 border-lime-500 shadow-md"
-                        />
                     </div>
                     <div
                         class="animate__animated animate__fadeInUp animate__fast"
                     >
                         <div
-                            class="mx-56 mt-24 rounded-lg border-4 border-lime-500 bg-slate-50 p-5 shadow-md"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/50 p-5 drop-shadow-md backdrop-blur-lg"
                         >
                             <div class="mx-4 my-2">
                                 <h1

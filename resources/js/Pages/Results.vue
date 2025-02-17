@@ -429,7 +429,7 @@ const male_low_muscle_maintenance = computed(() => {
                     </svg>
                     <Link
                         :href="route('Welcome')"
-                        class="text-2xl transition-colors hover:text-green-400 hover:transition-colors"
+                        class="text-2xl transition-colors hover:text-green-500 hover:transition-colors"
                     >
                         <h1 class="text-xl font-bold">Good Food</h1>
                     </Link>
