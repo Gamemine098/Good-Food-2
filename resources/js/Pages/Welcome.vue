@@ -9,6 +9,7 @@ defineProps<{
 
 <template>
     <Head title="Welcome" />
+    <img src="../../picture/bg.jpg" alt="" class="fixed -z-10" />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
@@ -310,7 +311,7 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="bg-slate-100 pb-20 pt-40">
+                <main class="pb-20 pt-40 backdrop-blur-md">
                     <div
                         class="animate__animated animate__fadeInUp animate__fast flex columns-2 items-center justify-center gap-36 py-64"
                     >
