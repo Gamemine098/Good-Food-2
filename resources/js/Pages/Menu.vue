@@ -9,6 +9,7 @@ defineProps<{
 
 <template>
     <Head title="Menu" />
+    <img src="../../picture/bg-2.jpg" alt="" class="fixed -z-10" />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
@@ -309,13 +310,13 @@ defineProps<{
                 </header>
 
                 <!-- Main Content -->
-                <main class="pb-20 pt-40">
+                <main class="pb-20 pt-40 backdrop-blur-sm">
                     <div class="my-10 flex items-center justify-center">
                         <div
                             class="grid grid-cols-3 gap-20 rounded-md text-center"
                         >
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://images.deliveryhero.io/image/fd-th/LH/wi07-listing.jpg"
                                         alt=""
@@ -325,7 +326,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://img.wongnai.com/p/1920x0/2021/03/30/22196b9c56554269a3d2a30e2da9e0a5.jpg"
                                         alt=""
@@ -335,7 +336,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://s359.kapook.com/pagebuilder/a8a1fb49-f651-40a5-9705-26a98ab0ea66.jpg"
                                         alt=""
@@ -351,7 +352,7 @@ defineProps<{
                             class="grid grid-cols-3 gap-20 rounded-md text-center"
                         >
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://s359.kapook.com/pagebuilder/60872799-48a8-4984-bd49-08e163d2505f.jpg"
                                         alt=""
@@ -361,7 +362,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://f.btwcdn.com/store-45841/blog_image/16457/140bea81-559d-dc79-1f3e-6710aba40103.jpg"
                                         alt=""
@@ -371,7 +372,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://img-global.cpcdn.com/recipes/1258b01e3e1f2889/400x400cq70/photo.jpg"
                                         alt=""
@@ -387,7 +388,7 @@ defineProps<{
                             class="grid grid-cols-3 gap-20 rounded-md text-center"
                         >
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://www.maggi.co.th/sites/default/files/styles/home_stage_944_531/public/srh_recipes/471189e42827fcba39357753a3887a8a.jpg?h=09433bb2&itok=mwZyhAOO"
                                         alt=""
@@ -397,7 +398,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://s359.kapook.com/pagebuilder/7ba75a92-1a9f-431f-8b6f-23db9b5ffda8.jpg"
                                         alt=""
@@ -407,7 +408,7 @@ defineProps<{
                                 </div>
                             </div>
                             <div class="max-w-sm rounded-lg border">
-                                <div class="rounded-lg">
+                                <div class="rounded-lg bg-white">
                                     <img
                                         src="https://s.isanook.com/wo/0/ud/33/167137/f.jpg?ip/crop/w670h402/q80/jpg"
                                         alt=""
