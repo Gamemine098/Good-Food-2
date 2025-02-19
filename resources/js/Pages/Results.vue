@@ -163,6 +163,7 @@ const male_low_muscle_maintenance = computed(() => {
 
 <template>
     <Head title="Results" />
+    <img src="../../picture/bg-2.jpg" alt="" class="fixed -z-10" />
     <div>
         <header class="fixed top-0 z-10 w-full text-center">
             <nav
@@ -463,8 +464,10 @@ const male_low_muscle_maintenance = computed(() => {
             </nav>
         </header>
 
-        <main class="overflow-x-hidden pb-20 pt-40">
-            <div class="container mx-56 p-4">
+        <main class="overflow-x-hidden pb-20 pt-40 backdrop-blur-sm">
+            <div
+                class="container mx-56 rounded-lg bg-white/60 p-4 shadow-lg backdrop-blur-lg"
+            >
                 <h2
                     class="mb-4 text-2xl font-bold transition-all hover:text-lime-600 hover:transition-all"
                 >
@@ -575,10 +578,6 @@ const male_low_muscle_maintenance = computed(() => {
                     <p>ดื่มน้ำเยอะ ๆ และนอนหลับให้เพียงพอ</p>
                 </div>
 
-                <!-- else -->
-                <div v-else class="text-xl">
-                    <p>กรุณาทำใหม่</p>
-                </div>
                 <!-- End -->
                 <Link :href="route('Forms')">
                     <button
