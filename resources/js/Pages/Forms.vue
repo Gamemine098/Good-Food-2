@@ -32,6 +32,7 @@ const submitForm = () => {
 
 <template>
     <Head title="Forms" />
+    <img src="../../picture/bg-2.jpg" alt="" class="fixed -z-10" />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
@@ -330,8 +331,10 @@ const submitForm = () => {
                 </header>
 
                 <!-- Main Content -->
-                <main class="pb-20 pt-40">
-                    <div class="container mx-56 p-4">
+                <main class="pb-20 pt-40 backdrop-blur-sm">
+                    <div
+                        class="container mx-56 rounded-lg bg-white/60 p-4 shadow-lg backdrop-blur-md"
+                    >
                         <h2 class="mb-4 text-2xl font-bold">แบบทดสอบ</h2>
                         <form @submit.prevent="submitForm">
                             <div class="mb-4">
