@@ -9,14 +9,14 @@ defineProps<{
 
 <template>
     <Head title="Welcome" />
-    <img src="../../picture/bg-2.jpg" alt="" class="fixed -z-10" />
+    <img src="../../picture/bg-4.svg" alt="" class="fixed -z-10" />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
                 <!-- Navbar -->
                 <header class="fixed top-0 z-10 w-full text-center">
                     <nav
-                        class="mx-2 my-2 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/50 px-14 py-7 shadow-md backdrop-blur-xl"
+                        class="mx-2 my-2 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/30 px-14 py-7 shadow-md backdrop-blur-xl"
                     >
                         <div class="flex items-center gap-4">
                             <svg
@@ -280,7 +280,7 @@ defineProps<{
                                 </g>
                             </svg>
                             <h1
-                                class="text-2xl font-bold text-green-500 drop-shadow-2xl"
+                                class="text-2xl font-bold text-green-400 drop-shadow-2xl"
                             >
                                 Good Food
                             </h1>
@@ -288,22 +288,22 @@ defineProps<{
                         <div class="flex items-center gap-4">
                             <Link
                                 :href="route('Menu')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
                                 >เมนูอาหาร</Link
                             >
                             <Link
                                 :href="route('Forms')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
                                 >แบบทดสอบ</Link
                             >
                             <Link
                                 :href="route('About')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
                                 >เกี่ยวกับเรา</Link
                             >
                             <Link
                                 :href="route('Welcome')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
                                 >ติดต่อเรา</Link
                             >
                         </div>
@@ -313,11 +313,11 @@ defineProps<{
                 <!-- Main Content -->
                 <main class="pb-20 pt-40 backdrop-blur-sm">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast flex columns-2 items-center justify-center gap-36 py-64"
+                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-52 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg"
                     >
                         <div class="text-center">
                             <h1
-                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-600 hover:transition-all"
+                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
