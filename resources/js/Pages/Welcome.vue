@@ -9,7 +9,11 @@ defineProps<{
 
 <template>
     <Head title="Welcome" />
-    <img src="../../picture/bg-4.svg" alt="" class="fixed -z-10" />
+    <img
+        src="../../picture/bg-5.svg"
+        alt=""
+        class="fixed -z-10 h-full w-full"
+    />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
