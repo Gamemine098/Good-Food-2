@@ -22,7 +22,7 @@ defineProps<{
                     class="animate__animated animate__fadeInUp animate__fast fixed top-0 z-10 w-full text-center"
                 >
                     <nav
-                        class="mx-4 my-3 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/30 px-14 py-7 shadow-md backdrop-blur-xl"
+                        class="mx-4 my-3 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/40 px-14 py-7 shadow-md backdrop-blur-xl"
                     >
                         <div class="flex items-center gap-4">
                             <svg

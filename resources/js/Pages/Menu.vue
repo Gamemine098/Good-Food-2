@@ -1,22 +1,82 @@
 <script setup lang="ts">
+import Modal from '@/Components/Modal.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import { ref } from 'vue';
 
 defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
 }>();
+
+const showingModal = ref(false);
+const selectedImage = ref('');
+
+const openModal = (imageSrc: string) => {
+    selectedImage.value = imageSrc;
+    showingModal.value = true;
+};
+
+const closeModal = () => {
+    showingModal.value = false;
+    selectedImage.value = '';
+};
+
+const menuItems = [
+    {
+        name: 'ผัดกระเพรา',
+        src: 'https://images.deliveryhero.io/image/fd-th/LH/wi07-listing.jpg',
+    },
+    {
+        name: 'ผัดพริกแกง',
+        src: 'https://img.wongnai.com/p/1920x0/2021/03/30/22196b9c56554269a3d2a30e2da9e0a5.jpg',
+    },
+    {
+        name: 'ผัดคะน้า',
+        src: 'https://s359.kapook.com/pagebuilder/a8a1fb49-f651-40a5-9705-26a98ab0ea66.jpg',
+    },
+    {
+        name: 'ผัดแขนง',
+        src: 'https://s359.kapook.com/pagebuilder/60872799-48a8-4984-bd49-08e163d2505f.jpg',
+    },
+    {
+        name: 'ผัดผักรวม',
+        src: 'https://f.btwcdn.com/store-45841/blog_image/16457/140bea81-559d-dc79-1f3e-6710aba40103.jpg',
+    },
+    {
+        name: 'ผัดผงกะหรี่',
+        src: 'https://img-global.cpcdn.com/recipes/1258b01e3e1f2889/400x400cq70/photo.jpg',
+    },
+    {
+        name: 'ผัดน้ำมันหอย',
+        src: 'https://www.maggi.co.th/sites/default/files/styles/home_stage_944_531/public/srh_recipes/471189e42827fcba39357753a3887a8a.jpg?h=09433bb2&itok=mwZyhAOO',
+    },
+    {
+        name: 'ผัดพริกหยวก',
+        src: 'https://s359.kapook.com/pagebuilder/7ba75a92-1a9f-431f-8b6f-23db9b5ffda8.jpg',
+    },
+    {
+        name: 'ปลาผัดขึ้นฉ่าย',
+        src: 'https://s.isanook.com/wo/0/ud/33/167137/f.jpg?ip/crop/w670h402/q80/jpg',
+    },
+];
 </script>
 
 <template>
     <Head title="Menu" />
-    <img src="../../picture/bg-2.jpg" alt="" class="fixed -z-10" />
+    <img
+        src="../../picture/bg-5.svg"
+        alt=""
+        class="fixed -z-10 h-full w-full"
+    />
     <div>
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
                 <!-- Navbar -->
-                <header class="fixed top-0 z-10 w-full text-center">
+                <header
+                    class="animate__animated animate__fadeInUp animate__fast fixed top-0 z-10 w-full text-center"
+                >
                     <nav
-                        class="mx-2 my-2 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/50 px-14 py-7 shadow-md backdrop-blur-xl"
+                        class="mx-4 my-3 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/40 px-14 py-7 shadow-md backdrop-blur-xl"
                     >
                         <div class="flex items-center gap-6">
                             <svg
@@ -281,7 +341,7 @@ defineProps<{
                             </svg>
                             <Link
                                 :href="route('Welcome')"
-                                class="text-xl transition-colors hover:text-green-500 hover:transition-colors"
+                                class="text-2xl font-bold drop-shadow-2xl transition-all hover:bg-gradient-to-r hover:from-green-700 hover:to-cyan-700 hover:bg-clip-text hover:text-transparent hover:transition-all"
                             >
                                 <h1 class="text-2xl font-bold">
                                     Good Food
@@ -289,20 +349,24 @@ defineProps<{
                             >
                         </div>
                         <div class="flex items-center gap-4">
-                            <h1 class="text-xl underline">เมนูอาหาร</h1>
+                            <h1
+                                class="bg-gradient-to-r from-green-800 to-cyan-700 bg-clip-text text-xl text-transparent drop-shadow-md"
+                            >
+                                เมนูอาหาร
+                            </h1>
                             <Link
                                 :href="route('Forms')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >แบบทดสอบ</Link
                             >
                             <Link
                                 :href="route('About')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >เกี่ยวกับเรา</Link
                             >
                             <Link
                                 :href="route('Welcome')"
-                                class="text-xl transition-colors hover:text-green-400 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >ติดต่อเรา</Link
                             >
                         </div>
@@ -315,17 +379,24 @@ defineProps<{
                         <div
                             class="grid grid-cols-3 gap-20 rounded-md text-center"
                         >
-                            <div class="max-w-sm rounded-lg border">
+                            <div
+                                v-for="(item, index) in menuItems"
+                                :key="index"
+                                class="max-w-sm rounded-lg border"
+                            >
                                 <div class="rounded-lg bg-white">
                                     <img
-                                        src="https://images.deliveryhero.io/image/fd-th/LH/wi07-listing.jpg"
+                                        :src="item.src"
                                         alt=""
-                                        class="h-72 w-96 rounded-lg object-cover"
+                                        class="h-72 w-96 cursor-pointer rounded-lg object-cover"
+                                        @click="openModal(item.src)"
                                     />
-                                    <div class="py-3 text-xl">ผัดกระเพรา</div>
+                                    <div class="py-3 text-xl">
+                                        {{ item.name }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="max-w-sm rounded-lg border">
+                            <!-- <div class="max-w-sm rounded-lg border">
                                 <div class="rounded-lg bg-white">
                                     <img
                                         src="https://img.wongnai.com/p/1920x0/2021/03/30/22196b9c56554269a3d2a30e2da9e0a5.jpg"
@@ -418,7 +489,7 @@ defineProps<{
                                         ปลาผัดขึ้นฉ่าย
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </main>
@@ -487,4 +558,8 @@ defineProps<{
             </div>
         </div>
     </div>
+
+    <Modal :show="showingModal" @close="closeModal" max-width="2xl">
+        <img :src="selectedImage" alt="Full Size Food" class="w-full" />
+    </Modal>
 </template>
