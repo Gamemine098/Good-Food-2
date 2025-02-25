@@ -419,16 +419,16 @@ window.addEventListener('resize', () => {
                 <!-- Main Content -->
                 <main class="cursor-default pb-20 pt-40 backdrop-blur-sm">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-56 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg sm:mx-10"
+                        class="animate__animated animate__fadeInUp animate__fast mb-56 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg sm:mx-10 lg:mx-96"
                     >
                         <div class="text-center">
                             <h1
-                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all sm:text-3xl"
+                                class="drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all sm:text-3xl lg:text-5xl"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
                             <p
-                                class="mb-6 mt-4 text-2xl drop-shadow-md sm:text-xl"
+                                class="mb-6 mt-4 drop-shadow-md sm:text-xl lg:text-3xl"
                             >
                                 ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
                             </p>
@@ -448,15 +448,15 @@ window.addEventListener('resize', () => {
                         class="animate__animated animate__fadeInUp animate__fast"
                     >
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 drop-shadow-md backdrop-blur-lg sm:mx-10"
+                            class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 drop-shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                         >
                             <div class="mx-4 my-2">
                                 <h1
-                                    class="text-3xl transition-all hover:text-lime-800 hover:transition-all sm:text-2xl"
+                                    class="transition-all hover:text-lime-800 hover:transition-all sm:text-2xl lg:text-3xl"
                                 >
                                     อาหารเพื่อสุขภาพ
                                 </h1>
-                                <p class="mt-2 text-2xl sm:text-xl">
+                                <p class="mt-2 sm:text-xl lg:text-2xl">
                                     การรับประทานอาหารเพื่อสุขภาพเริ่มต้นด้วยการเลือกอาหารที่มีประโยชน์ต่อสุขภาพ
                                     คุณไม่จำเป็นต้องเป็นเชฟก็สามารถปรุงอาหารที่มีคุณค่าทางโภชนาการและดีต่อสุขภาพหัวใจที่ครอบครัวของคุณจะต้องชื่นชอบได้
                                     เรียนรู้ว่าควรเลือกอาหารประเภทใดในร้านขายของชำ
@@ -465,23 +465,23 @@ window.addEventListener('resize', () => {
                                 </p>
                                 <a
                                     href="#moreinfo1"
-                                    class="mt-2 text-2xl text-lime-800 underline hover:text-lime-700 sm:text-xl"
+                                    class="mt-2 text-lime-800 underline hover:text-lime-700 sm:text-xl lg:text-2xl"
                                     >ข้อมูลเพื่มเติม</a
                                 >
                             </div>
                         </div>
                         <div id="moreinfo1" class="pt-1">
                             <div
-                                class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
+                                class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                             >
                                 <div class="mx-4 my-2 lg:flex lg:gap-44">
                                     <div>
                                         <h1
-                                            class="text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-2xl"
+                                            class="transition-all hover:text-lime-600 hover:transition-all sm:text-2xl lg:text-3xl"
                                         >
                                             อาหารเพื่อสุขภาพหัวใจ
                                         </h1>
-                                        <p class="mt-2 text-2xl sm:text-xl">
+                                        <p class="mt-2 sm:text-xl lg:text-2xl">
                                             เรียนรู้ทุกอย่างเกี่ยวกับการรับรองเครื่องหมาย
                                             Heart-Check
                                             ของสมาคมโรคหัวใจแห่งสหรัฐอเมริกา
@@ -497,9 +497,9 @@ window.addEventListener('resize', () => {
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
+                            class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                         >
-                            <div class="mx-4 my-2 lg:flex">
+                            <div class="mx-4 my-2 lg:flex lg:gap-44">
                                 <img
                                     src="https://s3vmwebprd.s3.ap-southeast-1.amazonaws.com/public/articles/154V9jWgL17oC0qK8GLVJdgCMW8cI1JAAvUELoFD.jpg"
                                     alt="Heart-Check Certification"
@@ -507,12 +507,12 @@ window.addEventListener('resize', () => {
                                 />
                                 <div>
                                     <h1
-                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl"
+                                        class="transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl lg:text-right lg:text-3xl"
                                     >
                                         อาหารผู้ป่วย
                                     </h1>
                                     <p
-                                        class="mt-2 text-right text-2xl sm:text-left sm:text-xl"
+                                        class="mt-2 sm:text-left sm:text-xl lg:text-right lg:text-2xl"
                                     >
                                         เป็นอาหารที่จะช่วยปรับปรุงสภาพร่างกาย
                                         และเสริมสร้างภูมิคุ้มกันร่างกายให้กับผู้ป่วยติดเตียง
@@ -523,16 +523,16 @@ window.addEventListener('resize', () => {
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
+                            class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                         >
                             <div class="mx-4 my-2 lg:flex lg:gap-44">
                                 <div>
                                     <h1
-                                        class="text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-2xl"
+                                        class="transition-all hover:text-lime-600 hover:transition-all sm:text-2xl lg:text-3xl"
                                     >
                                         2 : 1 : 1 ลดไขมัน
                                     </h1>
-                                    <p class="mt-2 text-2xl sm:text-xl">
+                                    <p class="mt-2 sm:text-xl lg:text-2xl">
                                         2 : 1 : 1
                                         เป็นการกำหนดปริมาณอาหารที่เหมาะสม
                                         โดยการแบ่งสัดส่วนของจาน ออกเป็น 4 ส่วน
@@ -551,9 +551,9 @@ window.addEventListener('resize', () => {
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
+                            class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                         >
-                            <div class="mx-4 my-2 lg:flex">
+                            <div class="mx-4 my-2 lg:flex lg:gap-44">
                                 <img
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLF_UQGkau6iS59nDxUNHcc6zQH_nVK2enShMZEKL4zHNRte_"
                                     alt="Heart-Check Certification"
@@ -561,12 +561,12 @@ window.addEventListener('resize', () => {
                                 />
                                 <div>
                                     <h1
-                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl"
+                                        class="transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl lg:text-right lg:text-3xl"
                                     >
                                         ดื่มน้ำ ให้ดีต่อร่างกาย
                                     </h1>
                                     <p
-                                        class="mt-2 text-right text-2xl sm:text-left sm:text-xl"
+                                        class="mt-2 sm:text-left sm:text-xl lg:text-right lg:text-2xl"
                                     >
                                         น้ำเป็นส่วนประกอบที่สำคัญในร่างกาย
                                         เพราะร่างกายมีน้ำเป็นส่วนประกอบกว่าร้อยละ
@@ -589,7 +589,7 @@ window.addEventListener('resize', () => {
                     v-if="canLogin"
                     class="w-full cursor-default bg-black px-1 py-16 text-white"
                 >
-                    <div class="mx-36 sm:mx-5">
+                    <div class="sm:mx-5 lg:mx-36">
                         <h1
                             class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
                         >
@@ -607,7 +607,7 @@ window.addEventListener('resize', () => {
                     </div>
                     <br />
                     <div
-                        class="mx-36 mt-3 columns-2 text-right text-sm lg:container sm:mx-5"
+                        class="mt-3 columns-2 text-right text-sm lg:container sm:mx-5 lg:mx-36"
                     >
                         <img
                             src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
