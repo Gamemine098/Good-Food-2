@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -7,11 +8,12 @@ defineProps<{
     canRegister?: boolean;
 }>();
 
-const isMenuOpen = ref(false);
+const isMobile = ref(window.innerWidth < 768);
 
-const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value;
-};
+// Update isMobile on window resize
+window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth < 768;
+});
 </script>
 
 <template>
@@ -304,27 +306,9 @@ const toggleMenu = () => {
                                 Good Food
                             </h1>
                         </div>
-                        <!-- Hamburger menu icon for smaller screens -->
-                        <button @click="toggleMenu" class="md:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="h-6 w-6"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                                />
-                            </svg>
-                        </button>
-                        <div
-                            class="flex items-center gap-4 md:flex"
-                            :class="{ hidden: !isMenuOpen, 'md:flex': true }"
-                        >
+
+                        <!-- Desktop -->
+                        <div v-if="!isMobile" class="flex items-center gap-4">
                             <Link
                                 :href="route('Menu')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
@@ -346,21 +330,106 @@ const toggleMenu = () => {
                                 >ติดต่อเรา</Link
                             >
                         </div>
+
+                        <!-- Mobile -->
+                        <Menu as="div" class="relative ml-3" v-else>
+                            <MenuButton
+                                class="inline-flex w-full justify-center gap-x-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 drop-shadow-sm hover:bg-white/40"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                </svg>
+                            </MenuButton>
+                            <Transition
+                                enter-active-class="transition ease-out duration-100"
+                                enter-from-class="transform opacity-0 scale-95"
+                                enter-to-class="transform opacity-100 scale-100"
+                                leave-active-class="transition ease-in duration-75"
+                                leave-from-class="transform opacity-100 scale-100"
+                                leave-to-class="transform opacity-0 scale-95"
+                            >
+                                <MenuItems
+                                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right transform rounded-md bg-white/60 py-1 shadow-lg backdrop-blur-md"
+                                >
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('Menu')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >เมนูอาหาร</Link
+                                        >
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('Forms')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >แบบทดสอบ</Link
+                                        >
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('About')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >เกี่ยวกับเรา</Link
+                                        >
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('Welcome')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >ติดต่อเรา</Link
+                                        >
+                                    </MenuItem>
+                                </MenuItems>
+                            </Transition>
+                        </Menu>
                     </nav>
                 </header>
 
                 <!-- Main Content -->
                 <main class="cursor-default pb-20 pt-40 backdrop-blur-sm">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-56 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg"
+                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-56 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg sm:mx-10"
                     >
                         <div class="text-center">
                             <h1
-                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all"
+                                class="text-5xl drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all sm:text-3xl"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
-                            <p class="mb-6 mt-4 text-2xl drop-shadow-md">
+                            <p
+                                class="mb-6 mt-4 text-2xl drop-shadow-md sm:text-xl"
+                            >
                                 ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
                             </p>
                             <Link
@@ -379,15 +448,15 @@ const toggleMenu = () => {
                         class="animate__animated animate__fadeInUp animate__fast"
                     >
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 drop-shadow-md backdrop-blur-lg"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 drop-shadow-md backdrop-blur-lg sm:mx-10"
                         >
                             <div class="mx-4 my-2">
                                 <h1
-                                    class="text-3xl transition-all hover:text-lime-800 hover:transition-all"
+                                    class="text-3xl transition-all hover:text-lime-800 hover:transition-all sm:text-2xl"
                                 >
                                     อาหารเพื่อสุขภาพ
                                 </h1>
-                                <p class="mt-2 text-2xl">
+                                <p class="mt-2 text-2xl sm:text-xl">
                                     การรับประทานอาหารเพื่อสุขภาพเริ่มต้นด้วยการเลือกอาหารที่มีประโยชน์ต่อสุขภาพ
                                     คุณไม่จำเป็นต้องเป็นเชฟก็สามารถปรุงอาหารที่มีคุณค่าทางโภชนาการและดีต่อสุขภาพหัวใจที่ครอบครัวของคุณจะต้องชื่นชอบได้
                                     เรียนรู้ว่าควรเลือกอาหารประเภทใดในร้านขายของชำ
@@ -396,23 +465,23 @@ const toggleMenu = () => {
                                 </p>
                                 <a
                                     href="#moreinfo1"
-                                    class="mt-2 text-2xl text-lime-800 underline hover:text-lime-700"
+                                    class="mt-2 text-2xl text-lime-800 underline hover:text-lime-700 sm:text-xl"
                                     >ข้อมูลเพื่มเติม</a
                                 >
                             </div>
                         </div>
                         <div id="moreinfo1" class="pt-1">
                             <div
-                                class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
+                                class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
                             >
-                                <div class="mx-4 my-2 flex gap-44">
+                                <div class="mx-4 my-2 lg:flex lg:gap-44">
                                     <div>
                                         <h1
-                                            class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                            class="text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-2xl"
                                         >
                                             อาหารเพื่อสุขภาพหัวใจ
                                         </h1>
-                                        <p class="mt-2 text-2xl">
+                                        <p class="mt-2 text-2xl sm:text-xl">
                                             เรียนรู้ทุกอย่างเกี่ยวกับการรับรองเครื่องหมาย
                                             Heart-Check
                                             ของสมาคมโรคหัวใจแห่งสหรัฐอเมริกา
@@ -422,27 +491,29 @@ const toggleMenu = () => {
                                     <img
                                         src="https://www.heart.org/en/-/media/Healthy-Living-Images/Heart-Check/HCinGroceryStore2.jpg?h=648&iar=0&mw=1910&w=1152&sc_lang=en"
                                         alt="Heart-Check Certification"
-                                        class="ml-1 h-72 w-96 rounded-lg object-cover shadow-md"
+                                        class="h-72 w-96 rounded-lg object-cover shadow-md sm:mx-auto sm:mt-4"
                                     />
                                 </div>
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
                         >
-                            <div class="mx-4 my-2 flex">
+                            <div class="mx-4 my-2 lg:flex">
                                 <img
                                     src="https://s3vmwebprd.s3.ap-southeast-1.amazonaws.com/public/articles/154V9jWgL17oC0qK8GLVJdgCMW8cI1JAAvUELoFD.jpg"
                                     alt="Heart-Check Certification"
-                                    class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                                    class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md sm:mx-auto sm:mb-4"
                                 />
                                 <div>
                                     <h1
-                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl"
                                     >
                                         อาหารผู้ป่วย
                                     </h1>
-                                    <p class="mt-2 text-right text-2xl">
+                                    <p
+                                        class="mt-2 text-right text-2xl sm:text-left sm:text-xl"
+                                    >
                                         เป็นอาหารที่จะช่วยปรับปรุงสภาพร่างกาย
                                         และเสริมสร้างภูมิคุ้มกันร่างกายให้กับผู้ป่วยติดเตียง
                                         พร้อมกันนั้นยังทำให้ผู้ป่วยได้รับพลังงาน
@@ -452,17 +523,16 @@ const toggleMenu = () => {
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
-                            id="moreinfo1"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
                         >
-                            <div class="mx-4 my-2 flex gap-44">
+                            <div class="mx-4 my-2 lg:flex lg:gap-44">
                                 <div>
                                     <h1
-                                        class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                        class="text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-2xl"
                                     >
                                         2 : 1 : 1 ลดไขมัน
                                     </h1>
-                                    <p class="mt-2 text-2xl">
+                                    <p class="mt-2 text-2xl sm:text-xl">
                                         2 : 1 : 1
                                         เป็นการกำหนดปริมาณอาหารที่เหมาะสม
                                         โดยการแบ่งสัดส่วนของจาน ออกเป็น 4 ส่วน
@@ -476,26 +546,28 @@ const toggleMenu = () => {
                                 <img
                                     src="https://www.nestleprofessional.co.th/sites/default/files/2024-08/shutterstock_558298840.jpg"
                                     alt="Heart-Check Certification"
-                                    class="ml-1 h-72 w-96 rounded-lg object-cover object-right shadow-md"
+                                    class="ml-1 h-72 w-96 rounded-lg object-cover object-right shadow-md sm:mx-auto sm:mt-4"
                                 />
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10"
                         >
-                            <div class="mx-4 my-2 flex">
+                            <div class="mx-4 my-2 lg:flex">
                                 <img
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLF_UQGkau6iS59nDxUNHcc6zQH_nVK2enShMZEKL4zHNRte_"
                                     alt="Heart-Check Certification"
-                                    class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md"
+                                    class="mr-36 h-72 w-96 rounded-lg object-cover shadow-md sm:mx-auto sm:mb-4"
                                 />
                                 <div>
                                     <h1
-                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                        class="text-right text-3xl transition-all hover:text-lime-600 hover:transition-all sm:text-left sm:text-2xl"
                                     >
                                         ดื่มน้ำ ให้ดีต่อร่างกาย
                                     </h1>
-                                    <p class="mt-2 text-right text-2xl">
+                                    <p
+                                        class="mt-2 text-right text-2xl sm:text-left sm:text-xl"
+                                    >
                                         น้ำเป็นส่วนประกอบที่สำคัญในร่างกาย
                                         เพราะร่างกายมีน้ำเป็นส่วนประกอบกว่าร้อยละ
                                         70
@@ -517,7 +589,7 @@ const toggleMenu = () => {
                     v-if="canLogin"
                     class="w-full cursor-default bg-black px-1 py-16 text-white"
                 >
-                    <div class="mx-36">
+                    <div class="mx-36 sm:mx-5">
                         <h1
                             class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
                         >
@@ -535,7 +607,7 @@ const toggleMenu = () => {
                     </div>
                     <br />
                     <div
-                        class="container mx-36 mt-3 columns-2 text-right text-sm"
+                        class="mx-36 mt-3 columns-2 text-right text-sm lg:container sm:mx-5"
                     >
                         <img
                             src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
