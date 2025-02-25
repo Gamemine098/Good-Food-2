@@ -6,3 +6,8 @@
     font-family: 'Sarabun', serif;
     scroll-behavior: smooth;
 }
+
+animate__delay-0-5s {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
