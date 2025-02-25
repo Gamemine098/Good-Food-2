@@ -18,9 +18,11 @@ defineProps<{
         <div class="relative min-h-screen items-center justify-center">
             <div class="relative">
                 <!-- Navbar -->
-                <header class="fixed top-0 z-10 w-full text-center">
+                <header
+                    class="animate__animated animate__fadeInUp animate__fast fixed top-0 z-10 w-full text-center"
+                >
                     <nav
-                        class="mx-2 my-2 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/30 px-14 py-7 shadow-md backdrop-blur-xl"
+                        class="mx-4 my-3 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-white/30 px-14 py-7 shadow-md backdrop-blur-xl"
                     >
                         <div class="flex items-center gap-4">
                             <svg
@@ -284,7 +286,7 @@ defineProps<{
                                 </g>
                             </svg>
                             <h1
-                                class="text-2xl font-bold text-green-400 drop-shadow-2xl"
+                                class="bg-gradient-to-r from-green-700 to-cyan-700 bg-clip-text text-2xl font-bold text-transparent drop-shadow-2xl"
                             >
                                 Good Food
                             </h1>
@@ -292,22 +294,22 @@ defineProps<{
                         <div class="flex items-center gap-4">
                             <Link
                                 :href="route('Menu')"
-                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >เมนูอาหาร</Link
                             >
                             <Link
                                 :href="route('Forms')"
-                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >แบบทดสอบ</Link
                             >
                             <Link
                                 :href="route('About')"
-                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >เกี่ยวกับเรา</Link
                             >
                             <Link
                                 :href="route('Welcome')"
-                                class="text-xl drop-shadow-md transition-colors hover:text-green-600 hover:transition-colors"
+                                class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
                                 >ติดต่อเรา</Link
                             >
                         </div>
@@ -317,7 +319,7 @@ defineProps<{
                 <!-- Main Content -->
                 <main class="pb-20 pt-40 backdrop-blur-sm">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-52 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg"
+                        class="animate__animated animate__fadeInUp animate__fast mx-96 mb-56 mt-32 flex items-center justify-center rounded-lg bg-white/30 py-32 backdrop-blur-lg"
                     >
                         <div class="text-center">
                             <h1
@@ -333,7 +335,7 @@ defineProps<{
                                 class="btn rounded-md px-3 py-2 drop-shadow-sm"
                             >
                                 <button
-                                    class="mt-3 h-10 w-44 rounded-lg border border-black/10 bg-lime-300/40 text-center text-xl drop-shadow-xl backdrop-blur-xl transition-all hover:scale-110 hover:border-black/50 hover:transition-all"
+                                    class="mt-3 h-10 w-44 rounded-lg border border-black/10 bg-gradient-to-r from-green-700/30 to-cyan-700/30 text-center text-xl drop-shadow-xl backdrop-blur-xl transition-all hover:scale-110 hover:border-black/50 hover:transition-all"
                                 >
                                     ทำแบบทดสอบ
                                 </button>
@@ -344,11 +346,11 @@ defineProps<{
                         class="animate__animated animate__fadeInUp animate__fast"
                     >
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/50 p-5 drop-shadow-md backdrop-blur-lg"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/30 p-5 drop-shadow-md backdrop-blur-lg"
                         >
                             <div class="mx-4 my-2">
                                 <h1
-                                    class="text-3xl transition-all hover:text-lime-600 hover:transition-all"
+                                    class="text-3xl transition-all hover:text-lime-800 hover:transition-all"
                                 >
                                     อาหารเพื่อสุขภาพ
                                 </h1>
@@ -361,14 +363,14 @@ defineProps<{
                                 </p>
                                 <a
                                     href="#moreinfo1"
-                                    class="mt-2 text-2xl text-lime-600 hover:underline"
+                                    class="mt-2 text-2xl text-lime-700 hover:underline"
                                     >ข้อมูลเพื่มเติม</a
                                 >
                             </div>
                         </div>
                         <div id="moreinfo1" class="pt-1">
                             <div
-                                class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                                class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
                             >
                                 <div class="mx-4 my-2 flex gap-44">
                                     <div>
@@ -393,7 +395,7 @@ defineProps<{
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
                         >
                             <div class="mx-4 my-2 flex">
                                 <img
@@ -417,7 +419,7 @@ defineProps<{
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
                             id="moreinfo1"
                         >
                             <div class="mx-4 my-2 flex gap-44">
@@ -446,7 +448,7 @@ defineProps<{
                             </div>
                         </div>
                         <div
-                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50 p-5 shadow-md"
+                            class="mx-56 mt-24 rounded-lg border-2 border-lime-500 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg"
                         >
                             <div class="mx-4 my-2 flex">
                                 <img
