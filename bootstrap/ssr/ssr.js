@@ -25,7 +25,7 @@ var e = String.prototype.replace, r = /%20/g, n = "RFC3986", o = { default: n, f
   return e.call(t4, r, "+");
 }, RFC3986: function(t4) {
   return String(t4);
-} }, RFC1738: "RFC1738", RFC3986: n }, i = Object.prototype.hasOwnProperty, u = Array.isArray, a = function() {
+} }, RFC1738: "RFC1738" }, i = Object.prototype.hasOwnProperty, u = Array.isArray, a = function() {
   for (var t4 = [], e2 = 0; e2 < 256; ++e2) t4.push("%" + ((e2 < 16 ? "0" : "") + e2.toString(16)).toUpperCase());
   return t4;
 }(), s = function(t4, e2) {
@@ -263,7 +263,7 @@ class N extends String {
       "function" == typeof i2.filter ? n2 = (0, i2.filter)("", n2) : p(i2.filter) && (r2 = i2.filter);
       var u2 = [];
       if ("object" != typeof n2 || null === n2) return "";
-      var a2 = l[e3.arrayFormat in l ? e3.arrayFormat : "indices" in e3 ? e3.indices ? "indices" : "repeat" : "indices"];
+      var a2 = l[e3 && e3.arrayFormat in l ? e3.arrayFormat : e3 && "indices" in e3 ? e3.indices ? "indices" : "repeat" : "indices"];
       r2 || (r2 = Object.keys(n2)), i2.sort && r2.sort(i2.sort);
       for (var s2 = 0; s2 < r2.length; ++s2) {
         var f2 = r2[s2];
@@ -351,7 +351,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/About.vue": () => import("./assets/About-CLI-oeeN.js"), "./Pages/Auth/ConfirmPassword.vue": () => import("./assets/ConfirmPassword-DuMymXkt.js"), "./Pages/Auth/ForgotPassword.vue": () => import("./assets/ForgotPassword-DQ92fImu.js"), "./Pages/Auth/Login.vue": () => import("./assets/Login-V-yxTQe-.js"), "./Pages/Auth/Register.vue": () => import("./assets/Register-Cs0zDhfU.js"), "./Pages/Auth/ResetPassword.vue": () => import("./assets/ResetPassword-DWXVIwXt.js"), "./Pages/Auth/VerifyEmail.vue": () => import("./assets/VerifyEmail-CSWiArVO.js"), "./Pages/Contact.vue": () => import("./assets/Contact-B5y0qgoo.js"), "./Pages/Dashboard.vue": () => import("./assets/Dashboard-XOvl3-42.js"), "./Pages/Forms.vue": () => import("./assets/Forms-CVytTSae.js"), "./Pages/Menu.vue": () => import("./assets/Menu-BJysmtQX.js"), "./Pages/Profile/Edit.vue": () => import("./assets/Edit-CGwj7lLI.js"), "./Pages/Profile/Partials/DeleteUserForm.vue": () => import("./assets/DeleteUserForm-25ywO71A.js"), "./Pages/Profile/Partials/UpdatePasswordForm.vue": () => import("./assets/UpdatePasswordForm-B3yEQEQv.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.vue": () => import("./assets/UpdateProfileInformationForm-Bb9dJNas.js"), "./Pages/Welcome.vue": () => import("./assets/Welcome-D4u3_Xz7.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/About.vue": () => import("./assets/About-D-Wnb49B.js"), "./Pages/Auth/ConfirmPassword.vue": () => import("./assets/ConfirmPassword-DuMymXkt.js"), "./Pages/Auth/ForgotPassword.vue": () => import("./assets/ForgotPassword-DkcWKjbd.js"), "./Pages/Auth/Login.vue": () => import("./assets/Login-DyjiH4il.js"), "./Pages/Auth/Register.vue": () => import("./assets/Register-Cs0zDhfU.js"), "./Pages/Auth/ResetPassword.vue": () => import("./assets/ResetPassword-DWXVIwXt.js"), "./Pages/Auth/VerifyEmail.vue": () => import("./assets/VerifyEmail-BS454M13.js"), "./Pages/Contact.vue": () => import("./assets/Contact-CdQ7uKDe.js"), "./Pages/Dashboard.vue": () => import("./assets/Dashboard-B3e_E8Vf.js"), "./Pages/Forms.vue": () => import("./assets/Forms-DCr4W4g4.js"), "./Pages/Menu.vue": () => import("./assets/Menu-CRlbX0je.js"), "./Pages/Profile/Edit.vue": () => import("./assets/Edit-Brd2YGTf.js"), "./Pages/Profile/Partials/DeleteUserForm.vue": () => import("./assets/DeleteUserForm-BOdjmMCb.js"), "./Pages/Profile/Partials/UpdatePasswordForm.vue": () => import("./assets/UpdatePasswordForm-B3yEQEQv.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.vue": () => import("./assets/UpdateProfileInformationForm-Bb9dJNas.js"), "./Pages/Results.vue": () => import("./assets/Results-DuIydBi9.js"), "./Pages/Welcome.vue": () => import("./assets/Welcome-DRJ_b6FH.js") })
     ),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(k, {
