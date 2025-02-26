@@ -435,7 +435,7 @@ window.addEventListener('resize', () => {
                 <!-- Main Content -->
                 <main class="pb-20 pt-40 backdrop-blur-sm">
                     <div
-                        class="animate__animated animate__fadeInUp animate__fast animate__delay-0-5s container rounded-lg bg-white/50 p-4 shadow-lg backdrop-blur-md sm:mx-8 lg:mx-56"
+                        class="animate__animated animate__fadeInUp animate__fast animate__delay-0-5s rounded-lg bg-white/50 p-4 shadow-lg backdrop-blur-md sm:mx-8 lg:mx-56"
                     >
                         <h2 class="mb-4 text-2xl font-bold">แบบทดสอบ</h2>
                         <form @submit.prevent="submitForm">
