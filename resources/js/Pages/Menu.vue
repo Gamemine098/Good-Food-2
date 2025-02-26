@@ -11,21 +11,47 @@ defineProps<{
 
 const showingModal = ref(false);
 const selectedImage = ref('');
+const selectedFoodName = ref('');
+const selectedFoodDescription = ref('');
+const selectedBenefitDescription = ref('');
+const selectedcomponent = ref('');
+const foodComponents = ref([]);
 
-const openModal = (imageSrc: string) => {
+const openModal = async (
+    imageSrc: string,
+    foodName: string,
+    foodDescription: string,
+    benefitDescription: string,
+    componentName: string,
+) => {
     selectedImage.value = imageSrc;
+    selectedFoodName.value = foodName;
+    selectedFoodDescription.value = foodDescription;
+    selectedBenefitDescription.value = benefitDescription;
+    selectedcomponent.value = componentName;
     showingModal.value = true;
 };
 
 const closeModal = () => {
     showingModal.value = false;
     selectedImage.value = '';
+    selectedFoodName.value = '';
+    selectedFoodDescription.value = '';
+    selectedBenefitDescription.value = '';
+    selectedcomponent.value = '';
+    foodComponents.value = [];
 };
 
 const menuItems = [
     {
         name: 'ผัดกระเพรา',
         src: 'https://images.deliveryhero.io/image/fd-th/LH/wi07-listing.jpg',
+        description:
+            'เมนูผัดกะเพราราดข้าว เป็นอาหารตามสั่ง อาหารจานเดียว ที่หากินง่าย เราขอนำเสนอวิธีทำผัดกะเพราหมูสับใส่กระชายขาว ปรุงรสเผ็ดเค็มตามชอบ อร่อยเลิศ ก่อนไปเข้าครัวเรามาดูประโยชน์ของกระชายขาวกันหน่อยดีกว่า',
+        benefit:
+            'ใบกระเพรามีสรรพคุณขับลม แก้จุกเสียด แน่นท้อง ช่วยย่อยอาหาร แก้คลื่นเหียนอาเจียน ส่วน กระชายขาวมีสรรพคุณช่วยแก้อาการปวดท้อง มวนในท้อง ท้องอืด ท้องเฟ้อ ช่วยขับปัสสาวะ',
+        component:
+            'ใช้หมูสับไม่ติดมัน หรือเปลี่ยนเป็นเนื้อสัตว์ไขมันต่ำ 200 กลัม, พริก + กระเทียม 2 ช้อนโต๊ะ, กระชาย (ประมาณ 20 กรัม), ใบกะเพรา (10 กรัม), น้ำมันหอย 1 ช้อนโต๊ะ, ซีอิ๊วดำ (เล็กน้อย), น้ำมัน 1 ช้อนชา',
     },
     {
         name: 'ผัดพริกแกง',
@@ -205,16 +231,6 @@ window.addEventListener('resize', () => {
                                                     style="fill: #84bd93"
                                                     d="M285.285,84.099c0.24,0.452,0.467,0.923,0.698,1.388C285.752,85.023,285.526,84.551,285.285,84.099 z"
                                                 ></path>
-                                                <path
-                                                    style="fill: #84bd93"
-                                                    d="M288.251,90.623c0.212,0.546,0.414,1.105,0.616,1.666 C288.666,91.727,288.463,91.169,288.251,90.623z"
-                                                ></path>
-                                                <path
-                                                    style="fill: #84bd93"
-                                                    d="M286.839,87.261c0.228,0.5,0.444,1.016,0.662,1.531C287.283,88.277,287.067,87.761,286.839,87.261z "
-                                                ></path>
-                                            </g>
-                                            <g>
                                                 <path
                                                     style="fill: #84bd93"
                                                     d="M122.922,45.422c-0.353-0.076-0.707-0.153-1.064-0.225 C122.215,45.269,122.568,45.346,122.922,45.422z"
@@ -490,11 +506,19 @@ window.addEventListener('resize', () => {
                                         :src="item.src"
                                         alt=""
                                         class="h-72 w-96 cursor-pointer rounded-lg object-cover"
-                                        @click="openModal(item.src)"
+                                        @click="
+                                            openModal(
+                                                item.src,
+                                                item.name,
+                                                item.description || '',
+                                                item.benefit || '',
+                                                item.component || '',
+                                            )
+                                        "
                                     />
-                                    <div class="py-3 text-xl">
+                                    <p class="cursor-default py-3 text-xl">
                                         {{ item.name }}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -572,17 +596,118 @@ window.addEventListener('resize', () => {
         :show="showingModal"
         @close="closeModal"
         max-width="full"
-        class="backdrop-blur-sm"
+        class="cursor-default backdrop-blur-sm"
     >
-        <div class="mx-20 rounded-lg bg-slate-50/30 px-2 py-3">
-            <div class="flex justify-between p-4">
+        <div
+            class="rounded-lg bg-slate-50/50 sm:mx-5 sm:px-2 sm:py-3 lg:mx-20 lg:p-6"
+        >
+            <!-- #1 -->
+            <div class="flex sm:gap-4 lg:gap-8">
                 <img
                     :src="selectedImage"
                     alt=""
-                    class="rounded-lg drop-shadow-md"
-                    width="50%"
+                    class="rounded-lg drop-shadow-md sm:w-72 lg:w-96"
                 />
-                <h1 class="text-2xl font-bold">Full Size Food</h1>
+                <div class="drop-shadow-md">
+                    <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
+                        {{ selectedFoodName }}
+                    </h1>
+                    <p class="sm:text-base lg:text-xl">
+                        {{ selectedFoodDescription }}
+                    </p>
+                    <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
+                        ประโยชน์
+                    </h1>
+                    <p class="sm:text-base lg:text-xl">
+                        {{ selectedBenefitDescription }}
+                    </p>
+                </div>
+            </div>
+            <!-- #2 -->
+            <div class="mt-4 flex">
+                <div class="drop-shadow-md">
+                    <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
+                        ส่วนประกอบ
+                    </h1>
+                    <p class="sm:text-base lg:text-xl">
+                        {{ selectedcomponent }}
+                    </p>
+                </div>
+            </div>
+            <!-- #3 -->
+            <div class="mt-4">
+                <div class="drop-shadow-md">
+                    <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
+                        ประโยชน์ที่จะรับ
+                    </h1>
+                    <table
+                        class="mt-4 min-w-full divide-y divide-black border border-black"
+                    >
+                        <thead class="bg-white/30">
+                            <tr>
+                                <th
+                                    scope="col"
+                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                                >
+                                    ส่วนประกอบ
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                                >
+                                    พลังงาน (kcal)
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                                >
+                                    โปรตีน (g)
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                                >
+                                    ไขมัน (g)
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                                >
+                                    คาร์โบไฮเดรต (g)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black bg-white/30">
+                            <tr v-for="row in 5" :key="row">
+                                <td
+                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
+                                >
+                                    Data 1
+                                </td>
+                                <td
+                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
+                                >
+                                    Data 2
+                                </td>
+                                <td
+                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
+                                >
+                                    Data 3
+                                </td>
+                                <td
+                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
+                                >
+                                    Data 4
+                                </td>
+                                <td
+                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
+                                >
+                                    Data 5
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="flex justify-between p-4">
                 <button
