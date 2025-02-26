@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Modal from '@/Components/Modal.vue';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -59,6 +60,12 @@ const menuItems = [
         src: 'https://s.isanook.com/wo/0/ud/33/167137/f.jpg?ip/crop/w670h402/q80/jpg',
     },
 ];
+
+const isMobile = ref(window.innerWidth < 768);
+
+window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth < 768;
+});
 </script>
 
 <template>
@@ -351,12 +358,12 @@ const menuItems = [
                                 :href="route('Welcome')"
                                 class="text-2xl font-bold drop-shadow-2xl transition-all hover:bg-gradient-to-r hover:from-green-700 hover:to-cyan-700 hover:bg-clip-text hover:text-transparent hover:transition-all"
                             >
-                                <h1 class="text-2xl font-bold">
-                                    Good Food
-                                </h1></Link
-                            >
+                                <h1 class="text-2xl font-bold">Good Food</h1>
+                            </Link>
                         </div>
-                        <div class="flex items-center gap-4">
+
+                        <!-- Desktop -->
+                        <div class="flex items-center gap-4" v-if="!isMobile">
                             <h1
                                 class="cursor-default bg-gradient-to-r from-green-800 to-cyan-700 bg-clip-text text-xl text-transparent drop-shadow-md"
                             >
@@ -378,6 +385,90 @@ const menuItems = [
                                 >ติดต่อเรา</Link
                             >
                         </div>
+
+                        <!-- Mobile -->
+                        <Menu as="div" class="relative ml-3" v-else>
+                            <MenuButton
+                                class="inline-flex w-full justify-center gap-x-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 drop-shadow-sm hover:bg-white/40"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                </svg>
+                            </MenuButton>
+                            <Transition
+                                enter-active-class="transition ease-out duration-100"
+                                enter-from-class="transform opacity-0 scale-95"
+                                enter-to-class="transform opacity-100 scale-100"
+                                leave-active-class="transition ease-in duration-75"
+                                leave-from-class="transform opacity-100 scale-100"
+                                leave-to-class="transform opacity-0 scale-95"
+                            >
+                                <MenuItems
+                                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right transform rounded-md bg-white/60 py-1 shadow-lg backdrop-blur-md"
+                                >
+                                    <MenuItem v-slot="{ active }">
+                                        <h1
+                                            class="cursor-default bg-gradient-to-r from-green-800 to-cyan-700 bg-clip-text text-transparent drop-shadow-md"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                        >
+                                            เมนูอาหาร
+                                        </h1>
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('Forms')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >แบบทดสอบ</Link
+                                        >
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('About')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >เกี่ยวกับเรา</Link
+                                        >
+                                    </MenuItem>
+                                    <MenuItem v-slot="{ active }">
+                                        <Link
+                                            :href="route('Welcome')"
+                                            :class="[
+                                                active
+                                                    ? 'bg-gray-100/50 text-black'
+                                                    : 'text-black',
+                                                'block px-4 py-2 text-sm',
+                                            ]"
+                                            >ติดต่อเรา</Link
+                                        >
+                                    </MenuItem>
+                                </MenuItems>
+                            </Transition>
+                        </Menu>
                     </nav>
                 </header>
 
@@ -415,7 +506,7 @@ const menuItems = [
                     v-if="canLogin"
                     class="w-full cursor-default bg-black px-1 py-16 text-white"
                 >
-                    <div class="mx-36">
+                    <div class="sm:mx-5 lg:mx-36">
                         <h1
                             class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
                         >
@@ -433,11 +524,12 @@ const menuItems = [
                     </div>
                     <br />
                     <div
-                        class="container mx-36 mt-3 columns-2 text-right text-sm"
+                        class="mt-3 columns-2 text-right text-sm lg:container sm:mx-5 lg:mx-36"
                     >
                         <img
                             src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
                             alt="it logo"
+                            loading="lazy"
                         />
                         <span
                             >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ

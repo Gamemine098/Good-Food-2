@@ -590,8 +590,8 @@ const male_low_muscle_maintenance = computed(() => {
         </main>
 
         <!-- Footer -->
-        <footer class="w-full bg-black px-1 py-16 text-white">
-            <div class="mx-36">
+        <footer class="w-full cursor-default bg-black px-1 py-16 text-white">
+            <div class="sm:mx-5 lg:mx-36">
                 <h1
                     class="text-left text-xl font-bold transition-colors hover:text-red-500 hover:transition-colors"
                 >
@@ -606,10 +606,13 @@ const male_low_muscle_maintenance = computed(() => {
                 </div>
             </div>
             <br />
-            <div class="container mx-36 mt-3 columns-2 text-right text-sm">
+            <div
+                class="mt-3 columns-2 text-right text-sm lg:container sm:mx-5 lg:mx-36"
+            >
                 <img
                     src="https://it.cmtc.ac.th/wp-content/uploads/2024/07/logo_footer_itcmtc2024.png"
                     alt="it logo"
+                    loading="lazy"
                 />
                 <span
                     >Copyright © 2025 สาขาวิชาเทคโนโลยีสารสนเทศ

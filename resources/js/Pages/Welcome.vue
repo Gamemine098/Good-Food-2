@@ -10,7 +10,6 @@ defineProps<{
 
 const isMobile = ref(window.innerWidth < 768);
 
-// Update isMobile on window resize
 window.addEventListener('resize', () => {
     isMobile.value = window.innerWidth < 768;
 });
@@ -423,12 +422,12 @@ window.addEventListener('resize', () => {
                     >
                         <div class="text-center">
                             <h1
-                                class="drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all sm:text-3xl lg:text-5xl"
+                                class="drop-shadow-lg transition-all hover:text-lime-400 hover:transition-all sm:text-3xl md:text-4xl lg:text-5xl"
                             >
                                 อาหารเพื่อสุขภาพ
                             </h1>
                             <p
-                                class="mb-6 mt-4 drop-shadow-md sm:text-xl lg:text-3xl"
+                                class="mb-6 mt-4 drop-shadow-md sm:text-xl md:text-2xl lg:text-3xl"
                             >
                                 ทำแบบทดสอบเพื่อเราสามารถแนะนำอาหารให้ฟรี
                             </p>
@@ -470,7 +469,7 @@ window.addEventListener('resize', () => {
                                 >
                             </div>
                         </div>
-                        <div id="moreinfo1" class="pt-1">
+                        <div id="moreinfo1" class="pt-5">
                             <div
                                 class="mt-24 rounded-lg border-2 border-lime-600/50 bg-slate-50/30 p-5 shadow-md backdrop-blur-lg sm:mx-10 lg:mx-56"
                             >
