@@ -16,6 +16,7 @@ const selectedFoodDescription = ref('');
 const selectedBenefitDescription = ref('');
 const selectedcomponent = ref('');
 const foodComponents = ref([]);
+const selectedBenefitGet = ref('');
 
 const openModal = async (
     imageSrc: string,
@@ -23,12 +24,14 @@ const openModal = async (
     foodDescription: string,
     benefitDescription: string,
     componentName: string,
+    benefitGetDescription: string,
 ) => {
     selectedImage.value = imageSrc;
     selectedFoodName.value = foodName;
     selectedFoodDescription.value = foodDescription;
     selectedBenefitDescription.value = benefitDescription;
     selectedcomponent.value = componentName;
+    selectedBenefitGet.value = benefitGetDescription;
     showingModal.value = true;
 };
 
@@ -39,6 +42,7 @@ const closeModal = () => {
     selectedFoodDescription.value = '';
     selectedBenefitDescription.value = '';
     selectedcomponent.value = '';
+    selectedBenefitGet.value = '';
     foodComponents.value = [];
 };
 
@@ -49,41 +53,83 @@ const menuItems = [
         description:
             'เมนูผัดกะเพราราดข้าว เป็นอาหารตามสั่ง อาหารจานเดียว ที่หากินง่าย เราขอนำเสนอวิธีทำผัดกะเพราหมูสับใส่กระชายขาว ปรุงรสเผ็ดเค็มตามชอบ อร่อยเลิศ ก่อนไปเข้าครัวเรามาดูประโยชน์ของกระชายขาวกันหน่อยดีกว่า',
         benefit:
-            'ใบกระเพรามีสรรพคุณขับลม แก้จุกเสียด แน่นท้อง ช่วยย่อยอาหาร แก้คลื่นเหียนอาเจียน ส่วน กระชายขาวมีสรรพคุณช่วยแก้อาการปวดท้อง มวนในท้อง ท้องอืด ท้องเฟ้อ ช่วยขับปัสสาวะ',
+            'ใบกระเพรามีสรรพคุณขับลม แก้จุกเสียด แน่นท้อง ช่วยย่อยอาหาร แก้คลื่นเหียนอาเจียน <br>ส่วน กระชายขาวมีสรรพคุณช่วยแก้อาการปวดท้อง มวนในท้อง ท้องอืด ท้องเฟ้อ ช่วยขับปัสสาวะ',
         component:
-            'ใช้หมูสับไม่ติดมัน หรือเปลี่ยนเป็นเนื้อสัตว์ไขมันต่ำ 200 กลัม, พริก + กระเทียม 2 ช้อนโต๊ะ, กระชาย (ประมาณ 20 กรัม), ใบกะเพรา (10 กรัม), น้ำมันหอย 1 ช้อนโต๊ะ, ซีอิ๊วดำ (เล็กน้อย), น้ำมัน 1 ช้อนชา',
+            'ใช้หมูสับไม่ติดมัน หรือเปลี่ยนเป็นเนื้อสัตว์ไขมันต่ำ 200 กลัม <br> พริก + กระเทียม 2 ช้อนโต๊ะ <br> กระชาย (ประมาณ 20 กรัม) <br> ใบกะเพรา (10 กรัม) <br> น้ำมันหอย 1 ช้อนโต๊ะ <br> ซีอิ๊วดำ (เล็กน้อย) <br> น้ำมัน 1 ช้อนชา',
+        benefitGet:
+            'พลังงาน 431 kcal <br> โปรตีน 45.6 g <br> ไขมัน 15.7 g <br> คาร์โบไฮเดรต 10.5 g',
     },
     {
         name: 'ผัดพริกแกง',
         src: 'https://img.wongnai.com/p/1920x0/2021/03/30/22196b9c56554269a3d2a30e2da9e0a5.jpg',
+        description:
+            'ถ้าเบื่อ ๆ เมนูผัดกะเพรา อาหารตามสั่ง อาหารไทย ลองมาทำเมนูผัดพริกแกงอร่อย ๆ สักมื้อดีไหม ขอนำเสนอวิธีทำผัดพริกแกงหมู ใส่ถั่วฝักยาวและใบมะกรูด เติมความเผ็ดจากน้ำพริกแกง กินกับข้าวสวยอร่อยมาก',
+        benefit:
+            'พริก จะมีคุณสมบัติช่วยระบบไหลเวียนของเลือด ทำให้ระดับน้ำตาลในเลือดขึ้นช้า ป้องกันการเกิดมะเร็ง <br>กระเทียม มีฤทธิ์ในการลดระดับคอลเลสเตอรอลและน้ำตาลในเลือด ลดความดันโลหิต<br>ตะไคร้ มีคุณสมบัติยับยั้งการเจริญเติบโตของเชื้อแบคทีเรียหลายชนิด ลดความดันโลหิต ตลอดจนป้องกันการเกิดมะเร็ง<br>หอมแดง ช่วยลดระดับคอเลสเตอรอลในเลือด<br>ข่า มีฤทธิ์ต้านเชื้อรา แบคทีเรีย และยีสต์ ยับยั้งการเจริญเติบโตของเนื้องอกมะเร็ง<br>ผิวมะกรูด มีฤทธิ์ต้านเชื้อแบคทีเรีย ลดความดันโลหิต',
+        component:
+            'ใช้หมูไม่ติดมัน หรืออกไก่ 300 กรัม <br> น้ำพริกแกงเผ็ด (1.5 ช้อนโต๊ะ) <br> ถั่วฝักยาว (50 กรัม) <br> ใบโหระพา (10 กรัม) <br> ใบมะกรูด (10 ใบ, 5 กรัม) <br> น้ำปลา (1 ช้อนโต๊ะ) <br> น้ำมันพืช (1 ช้อนชา)',
+        benefitGet:
+            'พลังงาน 453 kcal <br> โปรตีน 71 g <br> ไขมัน 15.4 g <br> คาร์โบไฮเดรต 11.8 g',
     },
     {
         name: 'ผัดคะน้า',
         src: 'https://s359.kapook.com/pagebuilder/a8a1fb49-f651-40a5-9705-26a98ab0ea66.jpg',
+        description:
+            'เมนูผัดคะน้า อาหารที่อุดมไปด้วยวิตามิน ลองมาทำเมนูผัดคะน้าอร่อย ๆ สักมื้อดีไหม ขอนำเสนอวิธีทำผัดคะน้าสุดแสนอร่อย',
+        benefit:
+            'คะน้าเป็นผักที่มีวิตามินเอ และวิตามินซีสูง ช่วยเสริมภูมิคุ้มกันให้กับร่างกาย รวมทั้งช่วยลดความเสี่ยงโรคมะเร็งได้ <br> ในผักคะน้ามีสารต้านอนุมูลอิสระเบต้าแคโรทีน ช่วยในการบำรุงสายตา และมีสารลูทีน ช่วยกระตุ้นการผลิตคอลลาเจนในเซลล์ผิว รวมถึงช่วยบำรุงผิวพรรณด้วย <br> ผักที่มีปริมาณแคลเซียมค่อนข้างสูง ซึ่งช่วยในการเสริมสร้างความแข็งแรงของกระดูก <br> ในคะน้ามีโฟเลตและธาตุเหล็กสูง ซึ่งเป็นสารที่ช่วยบำรุงเลือด และลดความเสี่ยงภาวะโลหิตจาง <br> ผักคะน้ามีไฟเบอร์สูงมาก ช่วยกระตุ้นการขับถ่ายได้',
+        component:
+            'คะน้า (หั่นเป็นท่อนสั้น) 300 กรัม <br> เนื้อหมู (100 กรัม, ไม่ติดมัน) <br> พริกขี้หนู (5 กรัม, 2-3 เม็ด) <br> กระเทียมสับ (1 ช้อนโต๊ะ, 10 กรัม) <br> น้ำมันหอย (2 ช้อนชา, 10 กรัม) <br> เต้าเจี้ยว (1 ช้อนโต๊ะ, 15 กรัม) <br> น้ำมันพืช (1 ช้อนชา)',
+        benefitGet:
+            'พลังงาน 336 kcal <br> โปรตีน 39 g <br> ไขมัน 10.4 g <br> คาร์โบไฮเดรต 24.2 g',
     },
     {
         name: 'ผัดแขนง',
         src: 'https://s359.kapook.com/pagebuilder/60872799-48a8-4984-bd49-08e163d2505f.jpg',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
     {
         name: 'ผัดผักรวม',
         src: 'https://f.btwcdn.com/store-45841/blog_image/16457/140bea81-559d-dc79-1f3e-6710aba40103.jpg',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
     {
         name: 'ผัดผงกะหรี่',
         src: 'https://img-global.cpcdn.com/recipes/1258b01e3e1f2889/400x400cq70/photo.jpg',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
     {
         name: 'ผัดน้ำมันหอย',
         src: 'https://www.maggi.co.th/sites/default/files/styles/home_stage_944_531/public/srh_recipes/471189e42827fcba39357753a3887a8a.jpg?h=09433bb2&itok=mwZyhAOO',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
     {
         name: 'ผัดพริกหยวก',
         src: 'https://s359.kapook.com/pagebuilder/7ba75a92-1a9f-431f-8b6f-23db9b5ffda8.jpg',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
     {
         name: 'ปลาผัดขึ้นฉ่าย',
         src: 'https://s.isanook.com/wo/0/ud/33/167137/f.jpg?ip/crop/w670h402/q80/jpg',
+        description: '',
+        benefit: '',
+        component: '',
+        benefitGet: '',
     },
 ];
 
@@ -388,18 +434,18 @@ window.addEventListener('resize', () => {
                             <Link
                                 :href="route('Forms')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >แบบทดสอบ</Link
-                            >
+                                >แบบทดสอบ
+                            </Link>
                             <Link
                                 :href="route('About')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >เกี่ยวกับเรา</Link
-                            >
+                                >เกี่ยวกับเรา
+                            </Link>
                             <Link
                                 :href="route('Welcome')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >ติดต่อเรา</Link
-                            >
+                                >ติดต่อเรา
+                            </Link>
                         </div>
 
                         <!-- Mobile -->
@@ -513,6 +559,7 @@ window.addEventListener('resize', () => {
                                                 item.description || '',
                                                 item.benefit || '',
                                                 item.component || '',
+                                                item.benefitGet || '',
                                             )
                                         "
                                     />
@@ -618,9 +665,10 @@ window.addEventListener('resize', () => {
                     <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
                         ประโยชน์
                     </h1>
-                    <p class="sm:text-base lg:text-xl">
-                        {{ selectedBenefitDescription }}
-                    </p>
+                    <p
+                        class="sm:text-base lg:text-xl"
+                        v-html="selectedBenefitDescription"
+                    ></p>
                 </div>
             </div>
             <!-- #2 -->
@@ -629,9 +677,10 @@ window.addEventListener('resize', () => {
                     <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
                         ส่วนประกอบ
                     </h1>
-                    <p class="sm:text-base lg:text-xl">
-                        {{ selectedcomponent }}
-                    </p>
+                    <p
+                        class="sm:text-base lg:text-xl"
+                        v-html="selectedcomponent"
+                    ></p>
                 </div>
             </div>
             <!-- #3 -->
@@ -640,73 +689,10 @@ window.addEventListener('resize', () => {
                     <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
                         ประโยชน์ที่จะรับ
                     </h1>
-                    <table
-                        class="mt-4 min-w-full divide-y divide-black border border-black"
-                    >
-                        <thead class="bg-white/30">
-                            <tr>
-                                <th
-                                    scope="col"
-                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                                >
-                                    ส่วนประกอบ
-                                </th>
-                                <th
-                                    scope="col"
-                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                                >
-                                    พลังงาน (kcal)
-                                </th>
-                                <th
-                                    scope="col"
-                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                                >
-                                    โปรตีน (g)
-                                </th>
-                                <th
-                                    scope="col"
-                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                                >
-                                    ไขมัน (g)
-                                </th>
-                                <th
-                                    scope="col"
-                                    class="border border-black px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                                >
-                                    คาร์โบไฮเดรต (g)
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-black bg-white/30">
-                            <tr v-for="row in 5" :key="row">
-                                <td
-                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
-                                >
-                                    Data 1
-                                </td>
-                                <td
-                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
-                                >
-                                    Data 2
-                                </td>
-                                <td
-                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
-                                >
-                                    Data 3
-                                </td>
-                                <td
-                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
-                                >
-                                    Data 4
-                                </td>
-                                <td
-                                    class="whitespace-nowrap border border-black px-6 py-4 text-sm text-black"
-                                >
-                                    Data 5
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p
+                        class="sm:text-base lg:text-xl"
+                        v-html="selectedBenefitGet"
+                    ></p>
                 </div>
             </div>
             <div class="flex justify-between p-4">

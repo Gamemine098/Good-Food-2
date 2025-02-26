@@ -311,23 +311,23 @@ window.addEventListener('resize', () => {
                             <Link
                                 :href="route('Menu')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >เมนูอาหาร</Link
-                            >
+                                >เมนูอาหาร
+                            </Link>
                             <Link
                                 :href="route('Forms')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >แบบทดสอบ</Link
-                            >
+                                >แบบทดสอบ
+                            </Link>
                             <Link
                                 :href="route('About')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >เกี่ยวกับเรา</Link
-                            >
+                                >เกี่ยวกับเรา
+                            </Link>
                             <Link
                                 :href="route('Welcome')"
                                 class="text-xl drop-shadow-md transition-colors hover:text-green-700 hover:transition-colors"
-                                >ติดต่อเรา</Link
-                            >
+                                >ติดต่อเรา
+                            </Link>
                         </div>
 
                         <!-- Mobile -->
@@ -370,8 +370,8 @@ window.addEventListener('resize', () => {
                                                     : 'text-black',
                                                 'block px-4 py-2 text-sm',
                                             ]"
-                                            >เมนูอาหาร</Link
-                                        >
+                                            >เมนูอาหาร
+                                        </Link>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
                                         <Link
@@ -382,8 +382,8 @@ window.addEventListener('resize', () => {
                                                     : 'text-black',
                                                 'block px-4 py-2 text-sm',
                                             ]"
-                                            >แบบทดสอบ</Link
-                                        >
+                                            >แบบทดสอบ
+                                        </Link>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
                                         <Link
@@ -394,8 +394,8 @@ window.addEventListener('resize', () => {
                                                     : 'text-black',
                                                 'block px-4 py-2 text-sm',
                                             ]"
-                                            >เกี่ยวกับเรา</Link
-                                        >
+                                            >เกี่ยวกับเรา
+                                        </Link>
                                     </MenuItem>
                                     <MenuItem v-slot="{ active }">
                                         <Link
@@ -406,8 +406,8 @@ window.addEventListener('resize', () => {
                                                     : 'text-black',
                                                 'block px-4 py-2 text-sm',
                                             ]"
-                                            >ติดต่อเรา</Link
-                                        >
+                                            >ติดต่อเรา
+                                        </Link>
                                     </MenuItem>
                                 </MenuItems>
                             </Transition>
