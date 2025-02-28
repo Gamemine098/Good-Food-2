@@ -670,14 +670,14 @@ window.addEventListener('resize', () => {
         class="cursor-default backdrop-blur-sm"
     >
         <div
-            class="rounded-lg bg-slate-50/50 sm:mx-5 sm:px-2 sm:py-3 lg:mx-20 lg:my-32 lg:p-6"
+            class="xs:p-2 rounded-lg bg-slate-50/50 sm:mx-5 sm:px-2 sm:py-3 lg:mx-20 lg:my-32 lg:p-6"
         >
             <!-- #1 -->
-            <div class="flex sm:gap-4 lg:gap-8">
+            <div class="xs:gap-2 flex sm:gap-4 lg:gap-8">
                 <img
                     :src="selectedImage"
                     alt=""
-                    class="rounded-lg drop-shadow-md sm:w-72 lg:w-96"
+                    class="xs:w-72 rounded-lg drop-shadow-md sm:w-72 lg:w-96"
                 />
                 <div class="drop-shadow-md">
                     <h1 class="text-left font-bold sm:text-xl lg:text-2xl">
